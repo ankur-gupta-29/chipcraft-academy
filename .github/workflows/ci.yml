@@ -21,18 +21,26 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
 
+      - name: Install dependencies
+        run: bundle install
+
       - name: Build Jekyll site
-        run: bundle exec jekyll build --strict_front_matter
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
-      - name: Check _site was generated
+      - name: Verify _site was generated
         run: |
           if [ ! -d "_site" ]; then
-            echo "❌ _site directory not found — Jekyll build failed"
+            echo "❌ _site directory missing — Jekyll build failed silently"
             exit 1
           fi
-          echo "✅ _site generated ($(find _site -name '*.html' | wc -l) HTML files)"
+          HTML_COUNT=$(find _site -name "*.html" | wc -l)
+          echo "✅ _site generated with ${HTML_COUNT} HTML files"
+          if [ "$HTML_COUNT" -lt 3 ]; then
+            echo "❌ Too few HTML files — something went wrong"
+            exit 1
+          fi
 
   # ── Job 2: Verilog syntax check ──────────────────────────────
   check-verilog:
@@ -46,7 +54,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y iverilog
-          iverilog -V
+          echo "iverilog version: $(iverilog -V 2>&1 | head -1)"
 
       - name: Run Verilog checker
         run: python3 scripts/check_verilog.py
@@ -59,5 +67,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate blog posts
+      - name: Validate post front matter
         run: python3 scripts/check_posts.py

@@ -1,8 +1,9 @@
 """
 check_verilog.py
-Extracts every ```verilog code block from _posts/*.md and runs
-iverilog syntax checking on any block that is a complete module.
-Exits with code 1 if any complete module fails to parse.
+Extracts every ```verilog block from _posts/*.md.
+For each post, all complete modules are compiled TOGETHER in one
+iverilog call so cross-module instantiations resolve correctly.
+Exits with code 1 if any post's Verilog fails syntax checking.
 """
 
 import os
@@ -12,64 +13,74 @@ import subprocess
 import tempfile
 
 POSTS_DIR = "_posts"
-# Matches ```verilog ... ``` (non-greedy, across lines)
 VERILOG_BLOCK = re.compile(r"```verilog\n(.*?)```", re.DOTALL)
 
 
 def is_complete_module(code: str) -> bool:
-    """Only check blocks that are full module definitions."""
+    """True only for blocks that contain a full module definition."""
     return "module " in code and "endmodule" in code
 
 
-def syntax_check(code: str, label: str) -> bool:
+def check_post_modules(post_name: str, blocks: list) -> bool:
     """
-    Write code to a temp file and run:
-        iverilog -t null -Wall <file>
-    Returns True if syntax is clean, False otherwise.
-    Prints errors to stdout so they show in CI logs.
+    Compile all complete modules from one post together in a single
+    iverilog run so instantiated sub-modules are in scope.
+    Returns True if clean, False on error.
     """
-    with tempfile.NamedTemporaryFile(
-        suffix=".v", mode="w", delete=False, prefix="chipcraft_ci_"
-    ) as f:
-        f.write(code)
-        tmp = f.name
+    complete = [(i, b) for i, b in enumerate(blocks, 1) if is_complete_module(b)]
+    skipped  = len(blocks) - len(complete)
 
+    if not complete:
+        if blocks:
+            print(f"  ⏭  {post_name}: {len(blocks)} snippet(s) — all skipped (no complete modules)")
+        return True
+
+    print(f"  Compiling {len(complete)} module(s) from [{post_name}]  "
+          f"({skipped} snippet(s) skipped)")
+
+    # Write every complete module to its own temp file
+    tmpfiles = []
     try:
-        result = subprocess.run(
-            ["iverilog", "-t", "null", "-Wall", tmp],
-            capture_output=True,
-            text=True,
-        )
+        for idx, code in complete:
+            tf = tempfile.NamedTemporaryFile(
+                suffix=".v", mode="w", delete=False,
+                prefix=f"chipcraft_{idx}_"
+            )
+            tf.write(code)
+            tf.close()
+            tmpfiles.append((idx, tf.name))
+
+        cmd = ["iverilog", "-g2012", "-t", "null"] + [f for _, f in tmpfiles]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+
     finally:
-        os.unlink(tmp)
+        for _, f in tmpfiles:
+            if os.path.exists(f):
+                os.unlink(f)
 
     if result.returncode != 0:
-        print(f"\n  ❌  FAIL  [{label}]")
-        # Clean up temp path from error messages so output is readable
-        stderr = result.stderr.replace(tmp, "<snippet>")
+        # Replace temp paths with readable block labels in error output
+        stderr = result.stderr
+        for idx, tf in tmpfiles:
+            stderr = stderr.replace(tf, f"<{post_name}:block{idx}>")
+        print(f"  ❌  FAIL  [{post_name}]")
         for line in stderr.strip().splitlines():
             print(f"      {line}")
         return False
 
-    print(f"  ✅  PASS  [{label}]")
+    print(f"  ✅  PASS  [{post_name}]")
     return True
 
 
 def main() -> int:
     if not os.path.isdir(POSTS_DIR):
-        print(f"❌ {POSTS_DIR}/ directory not found. Run from repo root.")
+        print(f"❌ '{POSTS_DIR}/' not found — run this script from the repo root.")
         return 1
 
-    posts = sorted(
-        f for f in os.listdir(POSTS_DIR) if f.endswith(".md")
-    )
-
-    total = 0
-    passed = 0
-    skipped = 0
-    failed_labels = []
-
+    posts = sorted(f for f in os.listdir(POSTS_DIR) if f.endswith(".md"))
     print(f"Scanning {len(posts)} post(s) in {POSTS_DIR}/\n")
+
+    failed = []
 
     for post in posts:
         path = os.path.join(POSTS_DIR, post)
@@ -80,40 +91,20 @@ def main() -> int:
         if not blocks:
             continue
 
-        print(f"── {post}  ({len(blocks)} verilog block(s))")
-
-        for i, block in enumerate(blocks, start=1):
-            label = f"{post}:block{i}"
-
-            if not is_complete_module(block):
-                print(f"  ⏭  SKIP  [{label}]  (snippet — no module/endmodule)")
-                skipped += 1
-                continue
-
-            total += 1
-            ok = syntax_check(block, label)
-            if ok:
-                passed += 1
-            else:
-                failed_labels.append(label)
-
-        print()
+        ok = check_post_modules(post, blocks)
+        if not ok:
+            failed.append(post)
 
     # ── Summary ───────────────────────────────────────────────
+    print()
     print("=" * 60)
-    print(f"Verilog check complete")
-    print(f"  Checked : {total}")
-    print(f"  Passed  : {passed}")
-    print(f"  Skipped : {skipped}  (incomplete snippets)")
-    print(f"  Failed  : {len(failed_labels)}")
-
-    if failed_labels:
-        print("\nFailed blocks:")
-        for label in failed_labels:
-            print(f"  • {label}")
+    if failed:
+        print(f"❌ {len(failed)} post(s) failed Verilog syntax check:")
+        for p in failed:
+            print(f"   • {p}")
         return 1
 
-    print("\n✅ All complete Verilog modules passed syntax check.")
+    print(f"✅ All Verilog modules in {len(posts)} post(s) passed syntax check.")
     return 0
 
 
