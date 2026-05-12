@@ -2,7 +2,7 @@
 layout: post
 title: "Static Timing Analysis (STA) — A Complete Beginner's Guide"
 description: "A detailed, visual guide to Static Timing Analysis: timing paths, setup & hold time, slack, SDC constraints, and how to fix violations."
-date: 2026-05-13
+date: 2026-05-12
 category: STA
 tags: [sta, timing, asic, sdc, beginner, vlsi]
 ---
