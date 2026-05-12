@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="post-meta">
+      <span class="post-category">{{ page.category | upcase }}</span>
+      <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+      <span class="post-read-time">{{ page.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="post-subtitle">{{ page.description }}</p>
+    {% endif %}
+    {% if page.tags %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <img class="post-hero-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  {% endif %}
+
+  <!-- AdSense in-article ad -->
+  {% if site.adsense_client %}
+  <div class="ad-in-article">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="{{ site.adsense_client }}"
+         data-ad-slot="{{ site.adsense_slot }}"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <!-- Gumroad CTA after post -->
+  <div class="post-cta-box">
+    <p>&#128218; Want a structured PDF guide on this topic?</p>
+    <a class="gumroad-button" href="{{ site.gumroad_url }}" target="_blank" rel="noopener">Browse PDF Guides &rarr;</a>
+  </div>
+
+  <!-- Post navigation -->
+  <nav class="post-navigation">
+    {% if page.previous.url %}
+    <a class="prev-post" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next.url %}
+    <a class="next-post" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
+    {% endif %}
+  </nav>
+</article>
+
+<!-- Related posts -->
+{% assign related = site.posts | where_exp: "p", "p.url != page.url" | slice: 0, 3 %}
+{% if related.size > 0 %}
+<section class="related-posts">
+  <h3>Related Articles</h3>
+  <div class="post-grid">
+    {% for post in related %}
+    <article class="post-card">
+      <span class="post-card-tag">{{ post.category }}</span>
+      <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+      <p>{{ post.description | truncate: 100 }}</p>
+      <span class="post-card-date">{{ post.date | date: "%b %d, %Y" }}</span>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

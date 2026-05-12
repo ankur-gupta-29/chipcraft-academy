@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- SEO Tag plugin -->
+  {% seo %}
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- Google Analytics -->
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+
+  <!-- Google AdSense -->
+  {% if site.adsense_client %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}"
+     crossorigin="anonymous"></script>
+  {% endif %}
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a class="site-logo" href="{{ '/' | relative_url }}">
+        <span class="logo-chip">&#x2318;</span> {{ site.title }}
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a></li>
+        <li><a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
+        <li><a href="{{ '/courses' | relative_url }}" {% if page.url contains '/courses' %}class="active"{% endif %}>Courses</a></li>
+        <li><a href="{{ '/resources' | relative_url }}" {% if page.url contains '/resources' %}class="active"{% endif %}>Resources</a></li>
+        <li><a href="{{ '/shop' | relative_url }}" class="nav-cta" {% if page.url contains '/shop' %}class="active"{% endif %}>Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- AdSense Banner (top) -->
+  {% if site.adsense_client %}
+  <div class="ad-banner ad-top">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="{{ site.adsense_client }}"
+         data-ad-slot="{{ site.adsense_slot }}"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  {% endif %}
+
+  <!-- Main content -->
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>{{ site.title }}</h4>
+        <p>Free Digital IC Design education for everyone.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/courses' | relative_url }}">Courses</a></li>
+          <li><a href="{{ '/resources' | relative_url }}">Free Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="{{ '/shop' | relative_url }}">PDF Guides</a></li>
+          <li><a href="{{ site.gumroad_url }}" target="_blank" rel="noopener">Gumroad Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">About</a></li>
+          <li><a href="mailto:{{ site.author.email }}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }} &mdash; Built with Jekyll &amp; hosted on GitHub Pages.</p>
+      <p class="disclaimer">Some links are affiliate links. We may earn a commission at no extra cost to you.</p>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
