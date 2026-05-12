@@ -91,9 +91,10 @@ async def test_btype_positive(dut):
 @cocotb.test()
 async def test_btype_negative(dut):
     """BEQ x0, x0, -8  →  imm = -8"""
-    # imm=-8=0x1FF8 (13-bit): imm[12]=1,imm[11]=1,imm[10:5]=111111,imm[4:1]=1000
-    # instr[31]=1, instr[7]=1, instr[30:25]=111111, instr[11:8]=1000
-    await drive(dut, 0b1_111111_00000_00000_000_1000_1_1100011)
+    # -8 = 0b1111_1111_1000 → imm[4:1] = bits[4:1] of -8 = 1100 (NOT 1000)
+    # imm[12]=1, imm[11]=1, imm[10:5]=111111, imm[4:1]=1100
+    # instr[31]=1, instr[7]=1, instr[30:25]=111111, instr[11:8]=1100
+    await drive(dut, 0b1_111111_00000_00000_000_1100_1_1100011)
     assert to_signed32(dut.imm.value) == -8, \
         f"B-type -8: got {to_signed32(dut.imm.value)}"
 
