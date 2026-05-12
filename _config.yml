@@ -61,4 +61,5 @@ exclude:
   - vendor/
   - vendor/bundle/
   - scripts/
+  - scripts/verify_riscv/
   - .github/

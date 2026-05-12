@@ -111,6 +111,7 @@ endmodule
 
 Extracts and sign-extends the immediate from all 5 instruction formats.
 
+{% raw %}
 ```verilog
 module imm_gen (
     input  wire [31:0] instr,
@@ -145,6 +146,7 @@ module imm_gen (
     end
 endmodule
 ```
+{% endraw %}
 
 ---
 
