@@ -85,9 +85,20 @@ end
 
 ## Phase 3: Simulation & Testbenches (2–3 weeks)
 
-A design you can't test is worthless. Learn to write testbenches:
+A design you can't test is worthless. Learn to write testbenches.
+
+Here is the design under test (DUT) and its testbench together:
 
 ```verilog
+// ── Design Under Test ──────────────────────────────────────
+module adder (
+  input  [7:0] a, b,
+  output [8:0] sum
+);
+  assign sum = a + b;
+endmodule
+
+// ── Testbench ──────────────────────────────────────────────
 module tb_adder;
   reg  [7:0] a, b;
   wire [8:0] sum;
