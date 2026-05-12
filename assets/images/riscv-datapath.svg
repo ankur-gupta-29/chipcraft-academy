@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" style="background:#161b22;border-radius:12px;font-family:monospace;">
+
+  <!-- Title -->
+  <text x="450" y="22" text-anchor="middle" fill="#8b949e" font-size="13" font-weight="bold">RISC-V Single Cycle Processor — Datapath</text>
+
+  <!-- ── PC ── -->
+  <rect x="20" y="200" width="60" height="50" rx="5" fill="#1c2128" stroke="#58a6ff" stroke-width="2"/>
+  <text x="50" y="221" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">PC</text>
+  <text x="50" y="237" text-anchor="middle" fill="#8b949e" font-size="9">Reg</text>
+
+  <!-- PC → IMEM -->
+  <line x1="80" y1="225" x2="118" y2="225" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="99" y="218" text-anchor="middle" fill="#8b949e" font-size="8">PC</text>
+
+  <!-- ── IMEM ── -->
+  <rect x="118" y="185" width="80" height="80" rx="5" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+  <text x="158" y="218" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">Instr</text>
+  <text x="158" y="231" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">Mem</text>
+  <text x="158" y="248" text-anchor="middle" fill="#8b949e" font-size="8">IMEM</text>
+
+  <!-- IMEM → Control -->
+  <line x1="198" y1="210" x2="230" y2="170" stroke="#f0883e" stroke-width="1.5" marker-end="url(#ao)"/>
+  <text x="220" y="185" fill="#8b949e" font-size="8">instr</text>
+
+  <!-- IMEM → RegFile (rs1,rs2,rd) -->
+  <line x1="198" y1="225" x2="318" y2="225" stroke="#f0883e" stroke-width="1.5" marker-end="url(#ao)"/>
+  <text x="258" y="218" text-anchor="middle" fill="#8b949e" font-size="8">instr[19:0]</text>
+
+  <!-- IMEM → ImmGen -->
+  <line x1="198" y1="245" x2="230" y2="340" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#ap)"/>
+  <text x="200" y="300" fill="#8b949e" font-size="8">instr</text>
+
+  <!-- ── Control Unit ── -->
+  <rect x="230" y="130" width="100" height="70" rx="5" fill="#1c2128" stroke="#f0883e" stroke-width="2"/>
+  <text x="280" y="157" text-anchor="middle" fill="#f0883e" font-size="10" font-weight="bold">Control</text>
+  <text x="280" y="170" text-anchor="middle" fill="#f0883e" font-size="10" font-weight="bold">Unit</text>
+  <text x="280" y="184" text-anchor="middle" fill="#8b949e" font-size="8">opcode→signals</text>
+
+  <!-- Control signals (dashed) -->
+  <line x1="330" y1="155" x2="500" y2="155" stroke="#f0883e" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="500" y1="155" x2="500" y2="300" stroke="#f0883e" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="415" y="148" text-anchor="middle" fill="#f0883e" font-size="8">ALUSrc, MemWr, RegWr, Branch…</text>
+
+  <!-- ── Register File ── -->
+  <rect x="318" y="185" width="100" height="120" rx="5" fill="#1c2128" stroke="#58a6ff" stroke-width="2"/>
+  <text x="368" y="213" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">Register</text>
+  <text x="368" y="226" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">File</text>
+  <text x="368" y="240" text-anchor="middle" fill="#8b949e" font-size="8">32 × 32-bit</text>
+  <text x="368" y="255" text-anchor="middle" fill="#8b949e" font-size="8">rs1,rs2 → rd</text>
+  <text x="368" y="268" text-anchor="middle" fill="#8b949e" font-size="8">RegWrite</text>
+  <text x="368" y="283" text-anchor="middle" fill="#8b949e" font-size="8">ctrl</text>
+
+  <!-- RegFile RD1 → ALU -->
+  <line x1="418" y1="220" x2="490" y2="245" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="448" y="228" fill="#8b949e" font-size="8">RD1</text>
+
+  <!-- RegFile RD2 → MUX -->
+  <line x1="418" y1="265" x2="460" y2="310" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="440" y="295" fill="#8b949e" font-size="8">RD2</text>
+
+  <!-- ── ImmGen ── -->
+  <rect x="230" y="315" width="100" height="50" rx="5" fill="#1c2128" stroke="#bc8cff" stroke-width="2"/>
+  <text x="280" y="337" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">Imm</text>
+  <text x="280" y="350" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">Gen</text>
+
+  <!-- ImmGen → MUX -->
+  <line x1="330" y1="340" x2="460" y2="330" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#ap)"/>
+  <text x="390" y="330" fill="#8b949e" font-size="8">imm32</text>
+
+  <!-- ── ALUSrc MUX ── -->
+  <polygon points="460,300 480,290 480,345 460,345" fill="#1c2128" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="465" y="320" fill="#f0883e" font-size="8">M</text>
+  <text x="465" y="330" fill="#f0883e" font-size="8">U</text>
+  <text x="465" y="340" fill="#f0883e" font-size="8">X</text>
+
+  <!-- MUX → ALU -->
+  <line x1="480" y1="315" x2="495" y2="275" stroke="#f0883e" stroke-width="1.5" marker-end="url(#ao)"/>
+  <text x="488" y="295" fill="#8b949e" font-size="8">SrcB</text>
+
+  <!-- ── ALU ── -->
+  <polygon points="490,235 540,215 555,250 540,285 490,265" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+  <text x="517" y="247" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">ALU</text>
+  <text x="517" y="260" text-anchor="middle" fill="#8b949e" font-size="8">ALUCtrl</text>
+
+  <!-- ALU → DMEM -->
+  <line x1="555" y1="250" x2="610" y2="250" stroke="#3fb950" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="582" y="243" text-anchor="middle" fill="#8b949e" font-size="8">ALUResult</text>
+
+  <!-- ALU Zero → Branch logic -->
+  <line x1="522" y1="215" x2="522" y2="160" stroke="#f85149" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#ar)"/>
+  <text x="530" y="188" fill="#f85149" font-size="8">Zero</text>
+
+  <!-- ── DMEM ── -->
+  <rect x="610" y="210" width="90" height="80" rx="5" fill="#1c2128" stroke="#bc8cff" stroke-width="2"/>
+  <text x="655" y="242" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">Data</text>
+  <text x="655" y="255" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">Mem</text>
+  <text x="655" y="270" text-anchor="middle" fill="#8b949e" font-size="8">MemRead</text>
+  <text x="655" y="282" text-anchor="middle" fill="#8b949e" font-size="8">MemWrite</text>
+
+  <!-- DMEM ReadData → WB MUX -->
+  <line x1="700" y1="250" x2="735" y2="280" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#ap)"/>
+  <text x="718" y="262" fill="#8b949e" font-size="8">RD</text>
+
+  <!-- ALU result → WB MUX (bypass) -->
+  <line x1="600" y1="250" x2="600" y2="310" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="600" y1="310" x2="735" y2="310" stroke="#3fb950" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="660" y="325" fill="#8b949e" font-size="8">ALUResult</text>
+
+  <!-- ── WB MUX ── -->
+  <polygon points="735,270 755,260 755,320 735,320" fill="#1c2128" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="740" y="287" fill="#f0883e" font-size="8">M</text>
+  <text x="740" y="297" fill="#f0883e" font-size="8">U</text>
+  <text x="740" y="307" fill="#f0883e" font-size="8">X</text>
+
+  <!-- WB MUX → RegFile WD -->
+  <line x1="755" y1="290" x2="800" y2="290" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="800" y1="290" x2="800" y2="440" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="800" y1="440" x2="368" y2="440" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="368" y1="440" x2="368" y2="305" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="580" y="455" text-anchor="middle" fill="#58a6ff" font-size="9">WriteBack → RegFile WD (RegWrite)</text>
+
+  <!-- ── PC+4 Adder ── -->
+  <rect x="20" y="100" width="60" height="40" rx="5" fill="#1c2128" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="50" y="118" text-anchor="middle" fill="#3fb950" font-size="9" font-weight="bold">PC+4</text>
+  <text x="50" y="130" text-anchor="middle" fill="#3fb950" font-size="8">Adder</text>
+
+  <!-- PC → PC+4 -->
+  <line x1="50" y1="200" x2="50" y2="140" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- PC+4 → PC MUX -->
+  <line x1="80" y1="120" x2="845" y2="120" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="845" y1="120" x2="845" y2="390" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="845" y1="390" x2="820" y2="390" stroke="#3fb950" stroke-width="1.5" marker-end="url(#ag)"/>
+
+  <!-- Branch Target Adder -->
+  <rect x="230" y="400" width="100" height="40" rx="5" fill="#1c2128" stroke="#f85149" stroke-width="1.5"/>
+  <text x="280" y="418" text-anchor="middle" fill="#f85149" font-size="9" font-weight="bold">Branch</text>
+  <text x="280" y="430" text-anchor="middle" fill="#f85149" font-size="8">PC + imm</text>
+
+  <!-- ImmGen → Branch Adder -->
+  <line x1="280" y1="365" x2="280" y2="400" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#ap)"/>
+
+  <!-- PC → Branch Adder -->
+  <line x1="50" y1="250" x2="50" y2="420" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="50" y1="420" x2="230" y2="420" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ab)"/>
+
+  <!-- Branch Adder → PC MUX -->
+  <line x1="330" y1="420" x2="820" y2="420" stroke="#f85149" stroke-width="1.5"/>
+  <line x1="820" y1="420" x2="820" y2="405" stroke="#f85149" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- ── PC MUX ── -->
+  <polygon points="820,375 840,365 840,415 820,415" fill="#1c2128" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="825" y="388" fill="#f0883e" font-size="8">M</text>
+  <text x="825" y="398" fill="#f0883e" font-size="8">U</text>
+  <text x="825" y="408" fill="#f0883e" font-size="8">X</text>
+
+  <!-- PC MUX → PC -->
+  <line x1="840" y1="390" x2="870" y2="390" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="870" y1="390" x2="870" y2="225" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="870" y1="225" x2="80" y2="225" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="875" y="310" fill="#58a6ff" font-size="8" transform="rotate(90,875,310)">Next PC</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="ab" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#58a6ff"/></marker>
+    <marker id="ao" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#f0883e"/></marker>
+    <marker id="ap" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#bc8cff"/></marker>
+    <marker id="ag" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#3fb950"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#f85149"/></marker>
+  </defs>
+</svg>
