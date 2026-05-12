@@ -35,7 +35,7 @@ header_pages:
 
 # AdSense — replace with your publisher ID
 adsense_client: "ca-pub-2416419296440776"
-adsense_slot: "XXXXXXXXXX"
+adsense_slot: "6704270065"
 
 # Google Analytics — replace with your GA4 measurement ID
 google_analytics: "G-XXXXXXXXXX"
