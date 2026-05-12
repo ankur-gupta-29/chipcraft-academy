@@ -1,8 +1,9 @@
-SIM              = icarus
-TOPLEVEL_LANG    = verilog
-VERILOG_SOURCES  = $(shell pwd)/alu.v
-TOPLEVEL         = alu
-MODULE           = test_alu
+SIM                 = icarus
+TOPLEVEL_LANG       = verilog
+VERILOG_SOURCES     = $(shell pwd)/alu.v
+TOPLEVEL            = alu
+COCOTB_TEST_MODULES = test_alu
 COCOTB_RESULTS_FILE = results_alu.xml
+SIM_BUILD           = sim_build_alu
 
 include $(shell cocotb-config --makefiles)/Makefile.sim

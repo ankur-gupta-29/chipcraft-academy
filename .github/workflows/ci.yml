@@ -104,6 +104,12 @@ jobs:
           make -f Makefile.imm_gen
           echo "✅ ImmGen testbench passed"
 
+      - name: Run RISC-V single-cycle testbench
+        working-directory: scripts/verify_riscv
+        run: |
+          make -f Makefile.riscv
+          echo "✅ RISC-V single-cycle testbench passed"
+
       - name: Upload cocotb results
         if: always()
         uses: actions/upload-artifact@v4

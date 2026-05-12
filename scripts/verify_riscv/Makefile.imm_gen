@@ -1,8 +1,9 @@
-SIM              = icarus
-TOPLEVEL_LANG    = verilog
-VERILOG_SOURCES  = $(shell pwd)/imm_gen.v
-TOPLEVEL         = imm_gen
-MODULE           = test_imm_gen
+SIM                 = icarus
+TOPLEVEL_LANG       = verilog
+VERILOG_SOURCES     = $(shell pwd)/imm_gen.v
+TOPLEVEL            = imm_gen
+COCOTB_TEST_MODULES = test_imm_gen
 COCOTB_RESULTS_FILE = results_imm_gen.xml
+SIM_BUILD           = sim_build_imm_gen
 
 include $(shell cocotb-config --makefiles)/Makefile.sim

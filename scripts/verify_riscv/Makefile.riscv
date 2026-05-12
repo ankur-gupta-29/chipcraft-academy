@@ -1,0 +1,9 @@
+SIM                 = icarus
+TOPLEVEL_LANG       = verilog
+VERILOG_SOURCES     = $(shell pwd)/riscv_single_cycle.v
+TOPLEVEL            = riscv_single_cycle
+COCOTB_TEST_MODULES = test_riscv
+COCOTB_RESULTS_FILE = results_riscv.xml
+SIM_BUILD           = sim_build_riscv
+
+include $(shell cocotb-config --makefiles)/Makefile.sim
