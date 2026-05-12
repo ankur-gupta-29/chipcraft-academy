@@ -499,7 +499,7 @@ Verified instruction encodings for RV32I:
 # sw   x3, 0(x0)             00302023   rs2=x3,  rs1=x0, imm=0
 # lw   x4, 0(x0)             00002203   rd=x4,   rs1=x0, imm=0
 # addi x5, x0, 5             00500293   imm=5,   rd=x5,  rs1=x0
-# bne  x5, x1, +8            00529463   rs1=x5,  rs2=x1, imm=+8 (skip next)
+# bne  x5, x1, +8            00129463   rs1=x5,  rs2=x1, imm=+8 (skip next)
 # addi x5, x0, 99            06300293   (should be skipped — x1=10 != x5=5)
 # slt  x6, x1, x2            0020A333   rd=x6,   rs1=x1, rs2=x2 → 1 (10<20)
 
@@ -509,7 +509,7 @@ Verified instruction encodings for RV32I:
 00302023
 00002203
 00500293
-00529463
+00129463
 06300293
 0020A333
 ```
@@ -523,7 +523,7 @@ Verified instruction encodings for RV32I:
 | `add x3,x1,x2` | `002081B3` | funct7=0, rs2=2, rs1=1, funct3=0, rd=3, op=0x33 |
 | `sw x3,0(x0)` | `00302023` | imm=0, rs2=3, rs1=0, funct3=2, op=0x23 |
 | `lw x4,0(x0)` | `00002203` | imm=0, rs1=0, funct3=2, rd=4, op=0x03 |
-| `bne x5,x1,+8` | `00529463` | imm=+8, rs2=1, rs1=5, funct3=1, op=0x63 |
+| `bne x5,x1,+8` | `00129463` | imm=+8, rs2=1, rs1=5, funct3=1, op=0x63 |
 | `slt x6,x1,x2` | `0020A333` | funct7=0, rs2=2, rs1=1, funct3=2, rd=6, op=0x33 |
 
 ---
