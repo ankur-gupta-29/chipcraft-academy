@@ -30,32 +30,32 @@ permalink: /
     <h2 class="section-title">What You'll Learn</h2>
     <p class="section-subtitle">Core topics in Digital IC Design, explained from first principles.</p>
     <div class="topics-grid">
-      <a href="/blog?tag=rtl" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=RTL+Design" class="topic-card">
         <div class="topic-icon">&#128187;</div>
         <h3>RTL Design</h3>
         <p>Verilog & SystemVerilog from scratch</p>
       </a>
-      <a href="/blog?tag=asic" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=ASIC+Flow" class="topic-card">
         <div class="topic-icon">&#9881;</div>
         <h3>ASIC Flow</h3>
         <p>Synthesis, place & route, sign-off</p>
       </a>
-      <a href="/blog?tag=vlsi" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=Beginner" class="topic-card">
         <div class="topic-icon">&#128268;</div>
         <h3>VLSI</h3>
         <p>CMOS fundamentals & physical design</p>
       </a>
-      <a href="/blog?tag=sta" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=STA" class="topic-card">
         <div class="topic-icon">&#9201;</div>
         <h3>STA</h3>
         <p>Static timing analysis & constraints</p>
       </a>
-      <a href="/blog?tag=verification" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=Beginner" class="topic-card">
         <div class="topic-icon">&#9989;</div>
         <h3>Verification</h3>
         <p>UVM, testbenches & coverage</p>
       </a>
-      <a href="/blog?tag=fpga" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=Beginner" class="topic-card">
         <div class="topic-icon">&#128312;</div>
         <h3>FPGA</h3>
         <p>Prototyping & FPGA vs ASIC trade-offs</p>

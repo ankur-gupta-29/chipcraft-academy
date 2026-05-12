@@ -333,6 +333,66 @@ p { margin-bottom: 1rem; color: var(--text); }
 .gumroad-button:hover { background: #d2a8ff; color: var(--bg); transform: translateY(-1px); }
 
 /* --- Blog page --- */
+.blog-controls {
+  max-width: var(--max-w);
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.blog-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  font-size: 1rem;
+}
+#blog-search {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0.65rem 2.5rem 0.65rem 2.5rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  transition: border-color var(--transition);
+}
+#blog-search:focus { outline: none; border-color: var(--accent); }
+#blog-search::placeholder { color: var(--text-muted); }
+#blog-search-clear {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+}
+#blog-search-clear:hover { color: var(--text); }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filter-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: all var(--transition);
+}
+.filter-btn:hover  { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: #0d1117; font-weight: 700; }
+.blog-count { max-width: var(--max-w); margin: 0 auto 1rem; padding: 0 1.5rem; font-size: 0.85rem; color: var(--text-muted); }
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
 .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start; }
 .blog-sidebar { position: sticky; top: 80px; }
 .sidebar-widget {
@@ -343,6 +403,32 @@ p { margin-bottom: 1rem; color: var(--text); }
   margin-bottom: 1rem;
 }
 .sidebar-widget h4 { margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.sidebar-cat-list { display: flex; flex-direction: column; gap: 0.4rem; padding: 0; }
+.sidebar-cat-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.sidebar-cat-btn:hover  { background: var(--bg-elevated); color: var(--text); }
+.sidebar-cat-btn.active { background: var(--accent-glow); color: var(--accent); font-weight: 600; }
+.cat-count {
+  background: var(--bg-elevated);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .tag {
   background: var(--bg-elevated);
@@ -354,6 +440,30 @@ p { margin-bottom: 1rem; color: var(--text); }
   transition: all var(--transition);
 }
 .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Post card meta row */
+.post-card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.post-card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
+.tag-filter {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: all var(--transition);
+}
+.tag-filter:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Category colour coding */
+.cat-beginner    { color: var(--green) !important; }
+.cat-rtl-design  { color: var(--accent) !important; }
+.cat-sta         { color: var(--orange) !important; }
+.cat-asic-flow   { color: var(--purple) !important; }
+.cat-courses     { color: #39d0d8 !important; }
+.cat-resources   { color: var(--text-muted) !important; }
 
 /* --- Individual post --- */
 .post { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; }

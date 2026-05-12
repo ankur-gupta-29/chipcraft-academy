@@ -5,47 +5,78 @@ description: "Tutorials, guides, and deep dives on Digital IC Design topics."
 permalink: /blog/
 ---
 
+<!-- Search + Filter bar -->
+<div class="blog-controls">
+  <div class="blog-search-wrap">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="blog-search" placeholder="Search articles…" autocomplete="off">
+    <button id="blog-search-clear" aria-label="Clear search" style="display:none;">&#x2715;</button>
+  </div>
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% assign cats = site.posts | map: "category" | uniq | sort %}
+    {% for cat in cats %}{% if cat %}
+    <button class="filter-btn" data-filter="{{ cat }}">{{ cat }}</button>
+    {% endif %}{% endfor %}
+  </div>
+</div>
+
+<!-- Results count -->
+<p class="blog-count" id="blog-count"></p>
+
 <div class="blog-layout">
   <div class="blog-main">
-    <div class="post-grid">
+    <div class="post-grid" id="post-grid">
       {% for post in site.posts %}
-      <article class="post-card">
-        <span class="post-card-tag">{{ post.category | default: "Guide" }}</span>
+      <article class="post-card"
+               data-category="{{ post.category }}"
+               data-tags="{{ post.tags | join: ' ' }}"
+               data-title="{{ post.title | downcase }}"
+               data-desc="{{ post.description | downcase }}">
+        <div class="post-card-meta">
+          <span class="post-card-tag cat-{{ post.category | slugify }}">{{ post.category | default: "Guide" }}</span>
+          <span class="post-card-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        </div>
         <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
         <p>{{ post.description | truncate: 120 }}</p>
-        <span class="post-card-date">{{ post.date | date: "%B %d, %Y" }}</span>
+        <div class="post-card-tags">
+          {% for tag in post.tags limit:4 %}
+          <button class="tag tag-filter" data-tag="{{ tag }}">{{ tag }}</button>
+          {% endfor %}
+        </div>
       </article>
       {% endfor %}
     </div>
+    <p class="no-results" id="no-results" style="display:none;">
+      No articles match that search. Try a different keyword or category.
+    </p>
   </div>
 
   <aside class="blog-sidebar">
     <div class="sidebar-widget">
-      <h4>Topics</h4>
-      <div class="tag-cloud">
-        <a href="#" class="tag">RTL Design</a>
-        <a href="#" class="tag">ASIC</a>
-        <a href="#" class="tag">VLSI</a>
-        <a href="#" class="tag">STA</a>
-        <a href="#" class="tag">Verification</a>
-        <a href="#" class="tag">FPGA</a>
-        <a href="#" class="tag">Verilog</a>
-        <a href="#" class="tag">SystemVerilog</a>
-        <a href="#" class="tag">UVM</a>
-        <a href="#" class="tag">Beginner</a>
-      </div>
+      <h4>Categories</h4>
+      <ul class="sidebar-cat-list">
+        {% assign cats = site.posts | map: "category" | uniq | sort %}
+        {% for cat in cats %}{% if cat %}
+        {% assign count = site.posts | where: "category", cat | size %}
+        <li>
+          <button class="sidebar-cat-btn" data-filter="{{ cat }}">
+            {{ cat }} <span class="cat-count">{{ count }}</span>
+          </button>
+        </li>
+        {% endif %}{% endfor %}
+      </ul>
     </div>
 
     <div class="sidebar-widget">
       <h4>Quick Links</h4>
       <ul style="padding-left:0;">
-        <li style="margin-bottom:0.5rem;"><a href="/courses">&#127891; Recommended Courses</a></li>
-        <li style="margin-bottom:0.5rem;"><a href="/resources">&#128196; Free Resources</a></li>
-        <li style="margin-bottom:0.5rem;"><a href="/shop">&#128218; PDF Guides</a></li>
+        <li style="margin-bottom:0.5rem;"><a href="{{ '/courses' | relative_url }}">&#127891; Recommended Courses</a></li>
+        <li style="margin-bottom:0.5rem;"><a href="{{ '/resources' | relative_url }}">&#128196; Free Resources</a></li>
+        <li style="margin-bottom:0.5rem;"><a href="{{ '/shop' | relative_url }}">&#128218; PDF Guides</a></li>
       </ul>
     </div>
 
-    <!-- Sidebar AdSense -->
     {% if site.adsense_client %}
     <div class="sidebar-widget" style="padding:0.5rem;">
       <ins class="adsbygoogle"
@@ -59,3 +90,69 @@ permalink: /blog/
     {% endif %}
   </aside>
 </div>
+
+<script>
+(function () {
+  const grid      = document.getElementById('post-grid');
+  const cards     = Array.from(grid.querySelectorAll('.post-card'));
+  const searchIn  = document.getElementById('blog-search');
+  const clearBtn  = document.getElementById('blog-search-clear');
+  const countEl   = document.getElementById('blog-count');
+  const noResults = document.getElementById('no-results');
+  let activeFilter = 'all';
+
+  function updateCount(n) {
+    countEl.textContent = n === cards.length ? '' : n + ' of ' + cards.length + ' articles';
+  }
+
+  function applyFilters() {
+    const q = searchIn.value.trim().toLowerCase();
+    clearBtn.style.display = q ? 'inline' : 'none';
+    let visible = 0;
+    cards.forEach(function (c) {
+      const catMatch  = activeFilter === 'all' || c.dataset.category === activeFilter;
+      const textMatch = !q || c.dataset.title.includes(q) || c.dataset.desc.includes(q) || c.dataset.tags.includes(q);
+      const show = catMatch && textMatch;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.style.display = visible === 0 ? '' : 'none';
+    updateCount(visible);
+  }
+
+  // Category filter buttons (top bar + sidebar)
+  function setFilter(val) {
+    activeFilter = val;
+    document.querySelectorAll('.filter-btn, .sidebar-cat-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.filter === val || (val === 'all' && b.dataset.filter === 'all'));
+    });
+    applyFilters();
+  }
+
+  document.getElementById('filter-bar').addEventListener('click', function (e) {
+    if (e.target.classList.contains('filter-btn')) setFilter(e.target.dataset.filter);
+  });
+  document.querySelectorAll('.sidebar-cat-btn').forEach(function (b) {
+    b.addEventListener('click', function () { setFilter(b.dataset.filter); });
+  });
+
+  // Tag pills inside post cards
+  grid.addEventListener('click', function (e) {
+    if (e.target.classList.contains('tag-filter')) {
+      searchIn.value = e.target.dataset.tag;
+      setFilter('all');
+      applyFilters();
+    }
+  });
+
+  // Search
+  searchIn.addEventListener('input', applyFilters);
+  clearBtn.addEventListener('click', function () { searchIn.value = ''; applyFilters(); searchIn.focus(); });
+
+  // Support ?filter=RTL+Design in the URL (from homepage topic cards)
+  const params = new URLSearchParams(window.location.search);
+  const urlFilter = params.get('filter') || params.get('tag');
+  if (urlFilter) setFilter(urlFilter);
+  else updateCount(cards.length);
+})();
+</script>
