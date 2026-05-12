@@ -1,0 +1,63 @@
+name: CI — Validate & Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── Job 1: Jekyll build ───────────────────────────────────────
+  build-jekyll:
+    name: Jekyll Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --strict_front_matter
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check _site was generated
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "❌ _site directory not found — Jekyll build failed"
+            exit 1
+          fi
+          echo "✅ _site generated ($(find _site -name '*.html' | wc -l) HTML files)"
+
+  # ── Job 2: Verilog syntax check ──────────────────────────────
+  check-verilog:
+    name: Verilog Syntax Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y iverilog
+          iverilog -V
+
+      - name: Run Verilog checker
+        run: python3 scripts/check_verilog.py
+
+  # ── Job 3: Front matter validation ───────────────────────────
+  check-posts:
+    name: Post Front Matter Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate blog posts
+        run: python3 scripts/check_posts.py
