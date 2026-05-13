@@ -44,6 +44,6 @@ So I built one.
 ## Contact
 
 Have a question, topic request, or course suggestion?  
-Email: [{{ site.author.email }}](mailto:{{ site.author.email }})
+[Visit the Contact page](/contact) or email [{{ site.author.email }}](mailto:{{ site.author.email }}) directly.
 
 > **Disclosure:** This site contains affiliate links to courses on Udemy, Coursera, and others. I may earn a commission if you purchase through these links, at no extra cost to you. I only recommend resources I believe are genuinely useful.

@@ -98,13 +98,17 @@
         <h4>Connect</h4>
         <ul>
           <li><a href="{{ '/about' | relative_url }}">About</a></li>
-          <li><a href="mailto:{{ site.author.email }}">Contact</a></li>
+          <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+          <li><a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }} &mdash; Built with Jekyll &amp; hosted on GitHub Pages.</p>
-      <p class="disclaimer">Some links are affiliate links. We may earn a commission at no extra cost to you.</p>
+      <p class="disclaimer">
+        Some links are affiliate links. We may earn a commission at no extra cost to you. &nbsp;|&nbsp;
+        <a href="{{ '/privacy-policy' | relative_url }}" style="color:var(--text-muted);">Privacy Policy</a>
+      </p>
     </div>
   </footer>
 
