@@ -23,16 +23,14 @@
   <meta name="google-site-verification" content="{{ site.google_search_console }}">
   {% endif %}
 
-  <!-- Google Analytics GA4 -->
-  {% if site.google_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-329CRWSF74"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
+    gtag('config', 'G-329CRWSF74');
   </script>
-  {% endif %}
 
   <!-- Google AdSense -->
   {% if site.adsense_client %}
