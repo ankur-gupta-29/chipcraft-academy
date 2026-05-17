@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300" style="background:#0d1117;font-family:ui-monospace,monospace;">
+  <rect width="700" height="300" fill="#0d1117"/>
+  <text x="350" y="28" fill="#e6edf3" font-size="15" font-weight="bold" text-anchor="middle">Moore vs Mealy — Output Timing</text>
+
+  <!-- Y-axis labels -->
+  <text x="70" y="78" fill="#8b949e" font-size="11" text-anchor="end">clk</text>
+  <text x="70" y="143" fill="#8b949e" font-size="11" text-anchor="end">input</text>
+  <text x="70" y="208" fill="#8b949e" font-size="11" text-anchor="end">Mealy out</text>
+  <text x="70" y="265" fill="#8b949e" font-size="11" text-anchor="end">Moore out</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="45" x2="680" y2="45" stroke="#21262d" stroke-width="1"/>
+  <line x1="80" y1="110" x2="680" y2="110" stroke="#21262d" stroke-width="1"/>
+  <line x1="80" y1="175" x2="680" y2="175" stroke="#21262d" stroke-width="1"/>
+  <line x1="80" y1="240" x2="680" y2="240" stroke="#21262d" stroke-width="1"/>
+
+  <!-- CLK waveform (period=75px, 8 cycles) -->
+  <polyline points="80,90 80,55 155,55 155,90 230,90 230,55 305,55 305,90 380,90 380,55 455,55 455,90 530,90 530,55 605,55 605,90 680,90" fill="none" stroke="#58a6ff" stroke-width="2"/>
+
+  <!-- INPUT signal: 0,1,0,1,sequence detected at 380 -->
+  <!-- 0: 80-155 low, 1: 155-230 high, 0: 230-305 low, 1: 305-380 high (101 sequence), then 0 -->
+  <polyline points="80,155 155,155 155,120 230,120 230,155 305,155 305,120 380,120 380,155 455,155 455,155 530,155 530,155 605,155 605,155 680,155" fill="none" stroke="#c9d1d9" stroke-width="2"/>
+  <!-- Label sequence -->
+  <text x="118" y="170" fill="#8b949e" font-size="9" text-anchor="middle">0</text>
+  <text x="193" y="113" fill="#e6edf3" font-size="9" text-anchor="middle">1</text>
+  <text x="268" y="170" fill="#8b949e" font-size="9" text-anchor="middle">0</text>
+  <text x="343" y="113" fill="#e6edf3" font-size="9" text-anchor="middle">1</text>
+  <text x="340" y="108" fill="#3fb950" font-size="9" text-anchor="middle">← "101" complete</text>
+
+  <!-- MEALY output: goes high immediately when sequence detected (at 305 rising edge) -->
+  <polyline points="80,220 305,220 305,185 380,185 380,220 680,220" fill="none" stroke="#3fb950" stroke-width="2"/>
+  <rect x="305" y="185" width="75" height="35" fill="#1a3a1a" opacity="0.5"/>
+  <text x="343" y="178" fill="#3fb950" font-size="9" text-anchor="middle">fires now ✓</text>
+
+  <!-- MOORE output: goes high 1 cycle LATER (at 380 rising edge) -->
+  <polyline points="80,285 380,285 380,250 455,250 455,285 680,285" fill="none" stroke="#ffa657" stroke-width="2"/>
+  <rect x="380" y="250" width="75" height="35" fill="#3a2a0a" opacity="0.5"/>
+  <text x="418" y="243" fill="#ffa657" font-size="9" text-anchor="middle">1 cycle late</text>
+
+  <!-- 1-cycle delay annotation -->
+  <line x1="343" y1="182" x2="343" y2="248" stroke="#ff7b72" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="418" y1="248" x2="418" y2="182" stroke="#ff7b72" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="343" y1="215" x2="418" y2="215" stroke="#ff7b72" stroke-width="1.5" marker-end="url(#al)"/>
+  <defs>
+    <marker id="al" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ff7b72"/>
+    </marker>
+    <marker id="al2" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse">
+      <polygon points="0 0, 8 3, 0 6" fill="#ff7b72"/>
+    </marker>
+  </defs>
+  <line x1="418" y1="215" x2="343" y2="215" stroke="#ff7b72" stroke-width="1.5" marker-end="url(#al2)"/>
+  <text x="381" y="210" fill="#ff7b72" font-size="9" text-anchor="middle">1 cycle</text>
+
+  <!-- Vertical clock edge markers -->
+  <line x1="305" y1="45" x2="305" y2="295" stroke="#58a6ff" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+  <line x1="380" y1="45" x2="380" y2="295" stroke="#58a6ff" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+</svg>
