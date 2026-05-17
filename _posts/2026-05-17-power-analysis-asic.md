@@ -304,6 +304,6 @@ Before tape-out:
 
 ## What's Next
 
-- **[VLSI Floorplanning]({{ site.baseurl }}{% post_url 2026-05-17-vlsi-floorplanning %})** — design the power grid that delivers current to all cells
-- **[RTL Synthesis with Design Compiler]({{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %})** — enable `compile_ultra -gate_clock` for automatic clock gating insertion
-- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — timing constraints also constrain power via `set_max_dynamic_power`
+- **[VLSI Floorplanning]({{ '/blog/2026/05/17/vlsi-floorplanning/' | relative_url }})** — design the power grid that delivers current to all cells
+- **[RTL Synthesis with Design Compiler]({{ '/blog/2026/05/17/synopsys-design-compiler/' | relative_url }})** — enable `compile_ultra -gate_clock` for automatic clock gating insertion
+- **[SDC Timing Constraints]({{ '/blog/2026/05/17/sdc-timing-constraints/' | relative_url }})** — timing constraints also constrain power via `set_max_dynamic_power`

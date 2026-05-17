@@ -77,12 +77,12 @@ permalink: /blog/
     <div class="sidebar-widget">
       <h4>&#128293; Popular Articles</h4>
       <ul style="padding-left:0;list-style:none;">
-        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ site.baseurl }}{% post_url 2026-05-17-verilog-interview-questions %}">50 Interview Questions</a></li>
-        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %}">Setup & Hold Time (STA)</a></li>
-        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %}">FSM Design in Verilog</a></li>
-        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ site.baseurl }}{% post_url 2026-05-17-clock-domain-crossing %}">Clock Domain Crossing</a></li>
-        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ site.baseurl }}{% post_url 2026-05-12-riscv-single-cycle-verilog %}">RISC-V CPU in Verilog</a></li>
-        <li style="font-size:0.85rem;"><a href="{{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %}">Design Compiler Guide</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ '/blog/2026/05/17/verilog-interview-questions/' | relative_url }}">50 Interview Questions</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }}">Setup & Hold Time (STA)</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ '/blog/2026/05/17/fsm-design-verilog/' | relative_url }}">FSM Design in Verilog</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ '/blog/2026/05/17/clock-domain-crossing/' | relative_url }}">Clock Domain Crossing</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{{ '/blog/2026/05/12/riscv-single-cycle-verilog/' | relative_url }}">RISC-V CPU in Verilog</a></li>
+        <li style="font-size:0.85rem;"><a href="{{ '/blog/2026/05/17/synopsys-design-compiler/' | relative_url }}">Design Compiler Guide</a></li>
       </ul>
     </div>
 

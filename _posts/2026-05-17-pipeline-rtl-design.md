@@ -364,6 +364,6 @@ async def test_pipeline_throughput(dut):
 
 ## What's Next
 
-- **[SystemVerilog vs Verilog]({{ site.baseurl }}{% post_url 2026-05-17-systemverilog-vs-verilog %})** — use `always_ff` and `always_comb` for cleaner pipeline stage coding
-- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand why each pipeline stage must meet timing
-- **[FSM Design in Verilog]({{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %})** — combine FSM state machines with pipelines for control logic
+- **[SystemVerilog vs Verilog]({{ '/blog/2026/05/17/systemverilog-vs-verilog/' | relative_url }})** — use `always_ff` and `always_comb` for cleaner pipeline stage coding
+- **[Setup & Hold Time — STA]({{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }})** — understand why each pipeline stage must meet timing
+- **[FSM Design in Verilog]({{ '/blog/2026/05/17/fsm-design-verilog/' | relative_url }})** — combine FSM state machines with pipelines for control logic

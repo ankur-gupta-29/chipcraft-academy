@@ -458,6 +458,6 @@ Before tape-out, verify:
 
 ## What's Next
 
-- **[SystemVerilog Assertions (SVA)]({{ site.baseurl }}{% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add `cover property` directives alongside your covergroups
-- **[UVM Testbench from Scratch]({{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %})** — build the environment this coverage collector plugs into
-- **[cocotb Python Verification]({{ site.baseurl }}{% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — lightweight Python alternative with `hypothesis` for property-based testing
+- **[SystemVerilog Assertions (SVA)]({{ '/blog/2026/05/13/systemverilog-assertions-sva-guide/' | relative_url }})** — add `cover property` directives alongside your covergroups
+- **[UVM Testbench from Scratch]({{ '/blog/2026/05/13/uvm-testbench-from-scratch/' | relative_url }})** — build the environment this coverage collector plugs into
+- **[cocotb Python Verification]({{ '/blog/2026/05/13/cocotb-python-rtl-verification-tutorial/' | relative_url }})** — lightweight Python alternative with `hypothesis` for property-based testing

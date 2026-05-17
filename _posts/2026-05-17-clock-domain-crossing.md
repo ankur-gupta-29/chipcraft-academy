@@ -313,6 +313,6 @@ INFO:    'valid' uses 2FF sync — OK for single bit
 
 ## What's Next
 
-- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand the metastability hazard at the transistor level
-- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — use `set_false_path` and `set_clock_groups` to tell STA about your CDC paths
-- **[FSM Design in Verilog]({{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %})** — apply these crossing techniques when FSMs span clock domains
+- **[Setup & Hold Time — STA]({{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }})** — understand the metastability hazard at the transistor level
+- **[SDC Timing Constraints]({{ '/blog/2026/05/17/sdc-timing-constraints/' | relative_url }})** — use `set_false_path` and `set_clock_groups` to tell STA about your CDC paths
+- **[FSM Design in Verilog]({{ '/blog/2026/05/17/fsm-design-verilog/' | relative_url }})** — apply these crossing techniques when FSMs span clock domains

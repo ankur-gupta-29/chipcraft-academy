@@ -365,6 +365,6 @@ endmodule
 
 ## What's Next
 
-- **[FSM Design in Verilog]({{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %})** — apply `typedef enum` and `always_comb` to real state machines
-- **[Pipelining RTL Design]({{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %})** — use SV features to build a clean 4-stage pipeline
-- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand why timing constraints apply to your SV registers
+- **[FSM Design in Verilog]({{ '/blog/2026/05/17/fsm-design-verilog/' | relative_url }})** — apply `typedef enum` and `always_comb` to real state machines
+- **[Pipelining RTL Design]({{ '/blog/2026/05/17/pipeline-rtl-design/' | relative_url }})** — use SV features to build a clean 4-stage pipeline
+- **[Setup & Hold Time — STA]({{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }})** — understand why timing constraints apply to your SV registers

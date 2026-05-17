@@ -252,6 +252,6 @@ set_clock_uncertainty -hold  0.1 [get_clocks clk]
 
 ## What's Next
 
-- **[Clock Domain Crossing (CDC)]({{ site.baseurl }}{% post_url 2026-05-17-clock-domain-crossing %})** — when two clocks interact, STA can't check across — you need CDC analysis
-- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — write complete constraint files that correctly model your design
-- **[Pipelining RTL Design]({{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %})** — the primary technique for fixing setup violations
+- **[Clock Domain Crossing (CDC)]({{ '/blog/2026/05/17/clock-domain-crossing/' | relative_url }})** — when two clocks interact, STA can't check across — you need CDC analysis
+- **[SDC Timing Constraints]({{ '/blog/2026/05/17/sdc-timing-constraints/' | relative_url }})** — write complete constraint files that correctly model your design
+- **[Pipelining RTL Design]({{ '/blog/2026/05/17/pipeline-rtl-design/' | relative_url }})** — the primary technique for fixing setup violations

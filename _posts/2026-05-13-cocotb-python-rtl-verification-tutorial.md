@@ -384,5 +384,5 @@ x2 = int(dut.RF.regs[2].value)
 ## What's Next
 
 Once you're comfortable with cocotb:
-- **[SystemVerilog Assertions (SVA)]({{ site.baseurl }}{% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add property checks inside the DUT itself
-- **[UVM Testbench from Scratch]({{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %})** — industry-standard verification methodology for large SoCs
+- **[SystemVerilog Assertions (SVA)]({{ '/blog/2026/05/13/systemverilog-assertions-sva-guide/' | relative_url }})** — add property checks inside the DUT itself
+- **[UVM Testbench from Scratch]({{ '/blog/2026/05/13/uvm-testbench-from-scratch/' | relative_url }})** — industry-standard verification methodology for large SoCs

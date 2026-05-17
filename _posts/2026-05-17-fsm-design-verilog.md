@@ -309,6 +309,6 @@ Avoid Verilog pragmas `// synthesis full_case parallel_case` unless you fully un
 
 ## What's Next
 
-- **[SystemVerilog vs Verilog]({{ site.baseurl }}{% post_url 2026-05-17-systemverilog-vs-verilog %})** — upgrade FSM coding style with `typedef enum`, `always_comb`, and `always_ff`
-- **[Pipelining RTL Design]({{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %})** — apply state-machine thinking to multi-stage pipelines
-- **[Setup & Hold Time]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand why FSM state registers have timing constraints
+- **[SystemVerilog vs Verilog]({{ '/blog/2026/05/17/systemverilog-vs-verilog/' | relative_url }})** — upgrade FSM coding style with `typedef enum`, `always_comb`, and `always_ff`
+- **[Pipelining RTL Design]({{ '/blog/2026/05/17/pipeline-rtl-design/' | relative_url }})** — apply state-machine thinking to multi-stage pipelines
+- **[Setup & Hold Time]({{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }})** — understand why FSM state registers have timing constraints

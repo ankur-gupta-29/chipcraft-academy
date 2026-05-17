@@ -331,6 +331,6 @@ exit
 
 ## What's Next
 
-- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — write the `.sdc` file that this synthesis script sources
-- **[VLSI Floorplanning]({{ site.baseurl }}{% post_url 2026-05-17-vlsi-floorplanning %})** — take the gate netlist into physical design
-- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand the timing reports DC generates
+- **[SDC Timing Constraints]({{ '/blog/2026/05/17/sdc-timing-constraints/' | relative_url }})** — write the `.sdc` file that this synthesis script sources
+- **[VLSI Floorplanning]({{ '/blog/2026/05/17/vlsi-floorplanning/' | relative_url }})** — take the gate netlist into physical design
+- **[Setup & Hold Time — STA]({{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }})** — understand the timing reports DC generates

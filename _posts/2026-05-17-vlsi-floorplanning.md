@@ -223,6 +223,6 @@ GDSII Export (Calibre DRC/LVS)
 
 ## What's Next
 
-- **[RTL Synthesis with Design Compiler]({{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %})** — the step before floorplanning
-- **[Power Analysis in ASIC Design]({{ site.baseurl }}{% post_url 2026-05-17-power-analysis-asic %})** — quantify the power budget your grid must supply
-- **[Cadence Virtuoso & Innovus Shortcuts]({{ site.baseurl }}{% post_url 2026-05-13-cadence-virtuoso-innovus-shortcuts %})** — keyboard shortcuts for faster floorplan editing in Innovus
+- **[RTL Synthesis with Design Compiler]({{ '/blog/2026/05/17/synopsys-design-compiler/' | relative_url }})** — the step before floorplanning
+- **[Power Analysis in ASIC Design]({{ '/blog/2026/05/17/power-analysis-asic/' | relative_url }})** — quantify the power budget your grid must supply
+- **[Cadence Virtuoso & Innovus Shortcuts]({{ '/blog/2026/05/13/cadence-virtuoso-innovus-shortcuts/' | relative_url }})** — keyboard shortcuts for faster floorplan editing in Innovus

@@ -53,35 +53,35 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">1</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-01-what-is-digital-ic-design %}">What Is Digital IC Design?</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/01/what-is-digital-ic-design/' | relative_url }}">What Is Digital IC Design?</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>Understand what chips are, how they're designed, and where the industry is heading.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">2</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-08-asic-vs-fpga %}">ASIC vs FPGA — Which Should You Learn?</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/08/asic-vs-fpga/' | relative_url }}">ASIC vs FPGA — Which Should You Learn?</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>Understand the trade-offs between custom chips (ASIC) and programmable hardware (FPGA).</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">3</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-10-how-to-start-rtl-design %}">How to Start RTL Design</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/10/how-to-start-rtl-design/' | relative_url }}">How to Start RTL Design</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>Set up your environment and write your first Verilog module — step by step.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">4</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-05-best-free-verilog-courses-2026 %}">Best Free Verilog Courses (2026)</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/05/best-free-verilog-courses-2026/' | relative_url }}">Best Free Verilog Courses (2026)</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>Curated list of free online courses to supplement your reading.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">5</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-12-top-5-books-vlsi-beginners %}">Top 5 Books for VLSI Beginners</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/12/top-5-books-vlsi-beginners/' | relative_url }}">Top 5 Books for VLSI Beginners</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>The essential reading list every IC designer should work through.</p>
     </div>
   </li>
@@ -105,35 +105,35 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">1</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-systemverilog-vs-verilog %}">SystemVerilog vs Verilog — Key Differences</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/systemverilog-vs-verilog/' | relative_url }}">SystemVerilog vs Verilog — Key Differences</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>Understand <code>logic</code>, <code>always_comb</code>/<code>always_ff</code>, interfaces, and why modern RTL uses SystemVerilog.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">2</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %}">FSM Design in Verilog — Moore, Mealy & Best Practices</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/fsm-design-verilog/' | relative_url }}">FSM Design in Verilog — Moore, Mealy & Best Practices</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Design finite state machines correctly — 2-process, 3-process, one-hot, Gray encoding.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">3</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %}">RTL Pipelining — Design & Hazard Handling</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/pipeline-rtl-design/' | relative_url }}">RTL Pipelining — Design & Hazard Handling</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Build pipelined datapaths, handle RAW/structural/control hazards, implement forwarding.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">4</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-12-riscv-single-cycle-verilog %}">RISC-V Single-Cycle CPU in Verilog</a> <span class="lp-badge advanced">Advanced</span></h4>
+      <h4><a href="{{ '/blog/2026/05/12/riscv-single-cycle-verilog/' | relative_url }}">RISC-V Single-Cycle CPU in Verilog</a> <span class="lp-badge advanced">Advanced</span></h4>
       <p>Build a complete working RISC-V processor from scratch — the ultimate RTL project.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">5</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-verilog-interview-questions %}">50 Verilog & Digital Design Interview Questions</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/verilog-interview-questions/' | relative_url }}">50 Verilog & Digital Design Interview Questions</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Test your knowledge and prepare for RTL design interviews.</p>
     </div>
   </li>
@@ -157,49 +157,49 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">1</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %}">Setup & Hold Time — Static Timing Analysis</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }}">Setup & Hold Time — Static Timing Analysis</a> <span class="lp-badge beginner">Beginner</span></h4>
       <p>Understand Tsu, Th, slack, and how STA determines if your design will work at speed.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">2</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %}">SDC Timing Constraints — Complete Guide</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/sdc-timing-constraints/' | relative_url }}">SDC Timing Constraints — Complete Guide</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Write correct <code>create_clock</code>, <code>set_input_delay</code>, <code>set_multicycle_path</code>, and more.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">3</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %}">RTL Synthesis with Synopsys Design Compiler</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/synopsys-design-compiler/' | relative_url }}">RTL Synthesis with Synopsys Design Compiler</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Run a complete synthesis flow: read RTL, apply constraints, compile, and write the netlist.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">4</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-vlsi-floorplanning %}">VLSI Floorplanning — Concepts & Techniques</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/vlsi-floorplanning/' | relative_url }}">VLSI Floorplanning — Concepts & Techniques</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Place macros, build the power grid, assign pins — set the physical foundation of your chip.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">5</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-power-analysis-asic %}">Power Analysis — Dynamic, Static & Low-Power Techniques</a> <span class="lp-badge advanced">Advanced</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/power-analysis-asic/' | relative_url }}">Power Analysis — Dynamic, Static & Low-Power Techniques</a> <span class="lp-badge advanced">Advanced</span></h4>
       <p>Calculate dynamic/static power, apply clock gating, multi-Vt, UPF power domains, and DVFS.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">6</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-12-librelane-tutorial-beginners %}">LibreLane ASIC Flow Tutorial</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/12/librelane-tutorial-beginners/' | relative_url }}">LibreLane ASIC Flow Tutorial</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Run a free, open-source ASIC flow end-to-end — no expensive EDA tools required.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">7</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-13-cadence-virtuoso-innovus-shortcuts %}">Cadence Innovus Keyboard Shortcuts</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/13/cadence-virtuoso-innovus-shortcuts/' | relative_url }}">Cadence Innovus Keyboard Shortcuts</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Work faster in Innovus PnR — essential shortcuts every physical design engineer needs.</p>
     </div>
   </li>
@@ -223,35 +223,35 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">1</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-17-clock-domain-crossing %}">Clock Domain Crossing — CDC Verification</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/17/clock-domain-crossing/' | relative_url }}">Clock Domain Crossing — CDC Verification</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Handle metastability, two-flop synchronizers, async FIFOs, and Gray-coded pointers.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">2</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-13-systemverilog-assertions-sva-guide %}">SystemVerilog Assertions (SVA) — Complete Guide</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/13/systemverilog-assertions-sva-guide/' | relative_url }}">SystemVerilog Assertions (SVA) — Complete Guide</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Write immediate and concurrent assertions, sequences, properties — catch bugs automatically.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">3</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-13-functional-coverage-systemverilog %}">Functional Coverage in SystemVerilog</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/13/functional-coverage-systemverilog/' | relative_url }}">Functional Coverage in SystemVerilog</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Use covergroups, coverpoints, and cross-coverage to measure verification completeness.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">4</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %}">UVM Testbench from Scratch</a> <span class="lp-badge advanced">Advanced</span></h4>
+      <h4><a href="{{ '/blog/2026/05/13/uvm-testbench-from-scratch/' | relative_url }}">UVM Testbench from Scratch</a> <span class="lp-badge advanced">Advanced</span></h4>
       <p>Build a complete UVM environment: driver, monitor, scoreboard, sequencer — step by step.</p>
     </div>
   </li>
   <li class="lp-step">
     <div class="lp-step-num">5</div>
     <div class="lp-step-body">
-      <h4><a href="{{ site.baseurl }}{% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %}">cocotb — Python-Based RTL Verification</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <h4><a href="{{ '/blog/2026/05/13/cocotb-python-rtl-verification-tutorial/' | relative_url }}">cocotb — Python-Based RTL Verification</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Write testbenches in Python using cocotb — great for data-science engineers entering IC design.</p>
     </div>
   </li>

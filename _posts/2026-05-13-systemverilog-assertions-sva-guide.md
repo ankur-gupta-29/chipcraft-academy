@@ -402,6 +402,6 @@ prove -property {a_req_ack p_awvalid_stable_chk}
 
 ## What's Next
 
-- **[UVM Testbench from Scratch]({{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %})** — build a full UVM environment with driver, monitor, and scoreboard
-- **[Functional Coverage in SystemVerilog]({{ site.baseurl }}{% post_url 2026-05-13-functional-coverage-systemverilog %})** — covergroups and coverpoints to measure what your tests exercise
-- **[cocotb Python Verification]({{ site.baseurl }}{% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — write testbenches in Python instead of SystemVerilog
+- **[UVM Testbench from Scratch]({{ '/blog/2026/05/13/uvm-testbench-from-scratch/' | relative_url }})** — build a full UVM environment with driver, monitor, and scoreboard
+- **[Functional Coverage in SystemVerilog]({{ '/blog/2026/05/13/functional-coverage-systemverilog/' | relative_url }})** — covergroups and coverpoints to measure what your tests exercise
+- **[cocotb Python Verification]({{ '/blog/2026/05/13/cocotb-python-rtl-verification-tutorial/' | relative_url }})** — write testbenches in Python instead of SystemVerilog

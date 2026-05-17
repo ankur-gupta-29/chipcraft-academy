@@ -383,6 +383,6 @@ set_load 0.05 [all_outputs]
 
 ## What's Next
 
-- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand what the STA tool is actually computing
-- **[Clock Domain Crossing]({{ site.baseurl }}{% post_url 2026-05-17-clock-domain-crossing %})** — implement the `set_clock_groups` and `set_false_path` CDC patterns in RTL
-- **[RTL Synthesis with Design Compiler]({{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %})** — feed this SDC file into synthesis and interpret the report
+- **[Setup & Hold Time — STA]({{ '/blog/2026/05/17/setup-hold-time-sta/' | relative_url }})** — understand what the STA tool is actually computing
+- **[Clock Domain Crossing]({{ '/blog/2026/05/17/clock-domain-crossing/' | relative_url }})** — implement the `set_clock_groups` and `set_false_path` CDC patterns in RTL
+- **[RTL Synthesis with Design Compiler]({{ '/blog/2026/05/17/synopsys-design-compiler/' | relative_url }})** — feed this SDC file into synthesis and interpret the report
