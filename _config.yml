@@ -39,7 +39,7 @@ adsense_slot: "6704270065"
 
 # Google Analytics GA4 — replace G-XXXXXXXXXX with your real Measurement ID
 # Get it from: https://analytics.google.com → Admin → Data Streams → your stream
-google_analytics: "G-XXXXXXXXXX"
+google_analytics: "G-329CRWSF74"
 
 # Google Search Console — replace with your verification token
 # Get it from: https://search.google.com/search-console → Add property → HTML tag method
