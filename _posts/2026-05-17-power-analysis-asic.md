@@ -57,7 +57,7 @@ Typical power breakdown for a mobile SoC:
 
 | Component | Fraction |
 |-----------|---------|
-| Clock tree (clock buffers + FFs) | 25–40% |
+| Clock tree (clock buffers + FFs) | 30–50% |
 | Datapath (adders, muxes, shifters) | 20–30% |
 | Memory (SRAM read/write) | 15–25% |
 | IO drivers | 5–15% |

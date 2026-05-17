@@ -37,8 +37,14 @@ header_pages:
 adsense_client: "ca-pub-2416419296440776"
 adsense_slot: "6704270065"
 
-# Google Analytics — replace with your GA4 measurement ID
+# Google Analytics GA4 — replace G-XXXXXXXXXX with your real Measurement ID
+# Get it from: https://analytics.google.com → Admin → Data Streams → your stream
 google_analytics: "G-XXXXXXXXXX"
+
+# Google Search Console — replace with your verification token
+# Get it from: https://search.google.com/search-console → Add property → HTML tag method
+# Copy ONLY the content="..." value (not the whole tag)
+google_search_console: ""
 
 # Gumroad store URL
 gumroad_url: "https://ankurgupta6.gumroad.com"

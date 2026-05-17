@@ -18,14 +18,19 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-  <!-- Google Analytics -->
+  <!-- Google Search Console verification -->
+  {% if site.google_search_console %}
+  <meta name="google-site-verification" content="{{ site.google_search_console }}">
+  {% endif %}
+
+  <!-- Google Analytics GA4 -->
   {% if site.google_analytics %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
+    gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
   </script>
   {% endif %}
 
@@ -47,6 +52,7 @@
       <ul class="nav-links">
         <li><a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a></li>
         <li><a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
+        <li><a href="{{ '/learning-path' | relative_url }}" {% if page.url contains '/learning-path' %}class="active"{% endif %}>Roadmap</a></li>
         <li><a href="{{ '/courses' | relative_url }}" {% if page.url contains '/courses' %}class="active"{% endif %}>Courses</a></li>
         <li><a href="{{ '/resources' | relative_url }}" {% if page.url contains '/resources' %}class="active"{% endif %}>Resources</a></li>
         <li><a href="{{ '/contact' | relative_url }}" {% if page.url contains '/contact' %}class="active"{% endif %}>Contact</a></li>
@@ -114,5 +120,24 @@
   </footer>
 
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+  <!-- Back to Top button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top" style="
+    display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;
+    width:2.5rem;height:2.5rem;border-radius:50%;border:none;cursor:pointer;
+    background:var(--accent,#58a6ff);color:#fff;font-size:1.1rem;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);transition:opacity 0.2s;">&#8679;</button>
+  <script>
+  (function(){
+    var btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    window.addEventListener('scroll', function(){
+      btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+    });
+    btn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+  </script>
 </body>
 </html>

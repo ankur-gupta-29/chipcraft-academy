@@ -69,6 +69,24 @@ permalink: /blog/
     </div>
 
     <div class="sidebar-widget">
+      <h4>&#128506; Learning Path</h4>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">New here? Follow our guided roadmap.</p>
+      <a href="{{ '/learning-path' | relative_url }}" class="btn btn-primary" style="display:block;text-align:center;font-size:0.85rem;padding:0.5rem 1rem;">View Roadmap &rarr;</a>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>&#128293; Popular Articles</h4>
+      <ul style="padding-left:0;list-style:none;">
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{% post_url 2026-05-17-verilog-interview-questions %}">50 Interview Questions</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{% post_url 2026-05-17-setup-hold-time-sta %}">Setup & Hold Time (STA)</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{% post_url 2026-05-17-fsm-design-verilog %}">FSM Design in Verilog</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{% post_url 2026-05-17-clock-domain-crossing %}">Clock Domain Crossing</a></li>
+        <li style="margin-bottom:0.6rem;font-size:0.85rem;"><a href="{% post_url 2026-05-12-riscv-single-cycle-verilog %}">RISC-V CPU in Verilog</a></li>
+        <li style="font-size:0.85rem;"><a href="{% post_url 2026-05-17-synopsys-design-compiler %}">Design Compiler Guide</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-widget">
       <h4>Quick Links</h4>
       <ul style="padding-left:0;">
         <li style="margin-bottom:0.5rem;"><a href="{{ '/courses' | relative_url }}">&#127891; Recommended Courses</a></li>

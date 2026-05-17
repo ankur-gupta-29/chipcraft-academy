@@ -14,12 +14,12 @@ permalink: /
     RTL design, ASIC flows, VLSI, STA, and Verification.
   </p>
   <div class="hero-actions">
-    <a href="/blog" class="btn btn-primary">Start Learning &rarr;</a>
-    <a href="/courses" class="btn btn-secondary">Browse Courses</a>
+    <a href="{{ '/blog' | relative_url }}" class="btn btn-primary">Start Learning &rarr;</a>
+    <a href="{{ '/learning-path' | relative_url }}" class="btn btn-secondary">View Learning Path</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><span class="stat-number">5+</span><span class="stat-label">Topic Areas</span></div>
-    <div class="stat"><span class="stat-number">20+</span><span class="stat-label">Free Articles</span></div>
+    <div class="stat"><span class="stat-number">6</span><span class="stat-label">Topic Areas</span></div>
+    <div class="stat"><span class="stat-number">30+</span><span class="stat-label">Free Articles</span></div>
     <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Free to Access</span></div>
   </div>
 </section>
@@ -38,27 +38,27 @@ permalink: /
       <a href="{{ '/blog' | relative_url }}?filter=ASIC+Flow" class="topic-card">
         <div class="topic-icon">&#9881;</div>
         <h3>ASIC Flow</h3>
-        <p>Synthesis, place & route, sign-off</p>
-      </a>
-      <a href="{{ '/blog' | relative_url }}?filter=Beginner" class="topic-card">
-        <div class="topic-icon">&#128268;</div>
-        <h3>VLSI</h3>
-        <p>CMOS fundamentals & physical design</p>
+        <p>Synthesis, floorplan, place & route, sign-off</p>
       </a>
       <a href="{{ '/blog' | relative_url }}?filter=STA" class="topic-card">
         <div class="topic-icon">&#9201;</div>
-        <h3>STA</h3>
-        <p>Static timing analysis & constraints</p>
+        <h3>STA & CDC</h3>
+        <p>Timing analysis, constraints & clock crossing</p>
       </a>
-      <a href="{{ '/blog' | relative_url }}?filter=Beginner" class="topic-card">
+      <a href="{{ '/blog' | relative_url }}?filter=Verification" class="topic-card">
         <div class="topic-icon">&#9989;</div>
         <h3>Verification</h3>
-        <p>UVM, testbenches & coverage</p>
+        <p>UVM, SVA, cocotb & functional coverage</p>
       </a>
       <a href="{{ '/blog' | relative_url }}?filter=Beginner" class="topic-card">
-        <div class="topic-icon">&#128312;</div>
-        <h3>FPGA</h3>
-        <p>Prototyping & FPGA vs ASIC trade-offs</p>
+        <div class="topic-icon">&#128268;</div>
+        <h3>Beginner</h3>
+        <p>Start here — IC design fundamentals</p>
+      </a>
+      <a href="{{ '/learning-path' | relative_url }}" class="topic-card">
+        <div class="topic-icon">&#128506;</div>
+        <h3>Learning Path</h3>
+        <p>Guided roadmap from beginner to professional</p>
       </a>
     </div>
   </div>
@@ -80,7 +80,7 @@ permalink: /
       {% endfor %}
     </div>
     <div style="text-align:center; margin-top:2rem;">
-      <a href="/blog" class="btn btn-secondary">View All Articles &rarr;</a>
+      <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">View All Articles &rarr;</a>
     </div>
   </div>
 </section>
@@ -103,6 +103,6 @@ permalink: /
     <p style="color: var(--text-muted); max-width:500px; margin: 0.5rem auto 2rem;">
       Structured, printable PDF guides to accelerate your learning — from RTL basics to full ASIC flows.
     </p>
-    <a href="/shop" class="btn btn-primary">&#128218; Browse the Shop &rarr;</a>
+    <a href="{{ '/shop' | relative_url }}" class="btn btn-primary">&#128218; Browse the Shop &rarr;</a>
   </div>
 </section>
