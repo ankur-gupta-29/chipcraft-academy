@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "UVM Testbench from Scratch — Step-by-Step Beginner Guide"
 description: "Build a complete UVM testbench from zero: seq_item, sequence, sequencer, driver, monitor, scoreboard, agent, env, and test — all explained with a verified ALU example and annotated code."
@@ -639,6 +639,6 @@ This is how teams reuse the same environment across many tests — override only
 
 ## What's Next
 
-- **[Functional Coverage in SystemVerilog]({% post_url 2026-05-13-functional-coverage-systemverilog %})** — add covergroups to this UVM environment to measure what the random sequences hit
-- **[SystemVerilog Assertions (SVA)]({% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add concurrent property checks to the DUT, run alongside the UVM TB
-- **[cocotb Python Verification]({% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — lighter-weight Python alternative for smaller blocks
+- **[Functional Coverage in SystemVerilog]({{ site.baseurl }}{% post_url 2026-05-13-functional-coverage-systemverilog %})** — add covergroups to this UVM environment to measure what the random sequences hit
+- **[SystemVerilog Assertions (SVA)]({{ site.baseurl }}{% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add concurrent property checks to the DUT, run alongside the UVM TB
+- **[cocotb Python Verification]({{ site.baseurl }}{% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — lighter-weight Python alternative for smaller blocks

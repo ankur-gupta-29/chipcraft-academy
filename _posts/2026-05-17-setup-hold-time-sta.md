@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Setup Time, Hold Time & Slack — Static Timing Analysis for Beginners"
 description: "Understand setup time, hold time, slack, and timing violations in digital design. Learn how STA tools check every path, what causes violations, and exactly how to fix them — with diagrams."
@@ -252,6 +252,6 @@ set_clock_uncertainty -hold  0.1 [get_clocks clk]
 
 ## What's Next
 
-- **[Clock Domain Crossing (CDC)]({% post_url 2026-05-17-clock-domain-crossing %})** — when two clocks interact, STA can't check across — you need CDC analysis
-- **[SDC Timing Constraints]({% post_url 2026-05-17-sdc-timing-constraints %})** — write complete constraint files that correctly model your design
-- **[Pipelining RTL Design]({% post_url 2026-05-17-pipeline-rtl-design %})** — the primary technique for fixing setup violations
+- **[Clock Domain Crossing (CDC)]({{ site.baseurl }}{% post_url 2026-05-17-clock-domain-crossing %})** — when two clocks interact, STA can't check across — you need CDC analysis
+- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — write complete constraint files that correctly model your design
+- **[Pipelining RTL Design]({{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %})** — the primary technique for fixing setup violations

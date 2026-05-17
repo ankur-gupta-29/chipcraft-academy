@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "RTL Synthesis with Synopsys Design Compiler — Beginner Walkthrough"
 description: "Step-by-step guide to RTL synthesis with Synopsys Design Compiler: read_verilog, elaborate, compile_ultra, timing reports, area reports, common errors — with a complete dc_shell script."
@@ -331,6 +331,6 @@ exit
 
 ## What's Next
 
-- **[SDC Timing Constraints]({% post_url 2026-05-17-sdc-timing-constraints %})** — write the `.sdc` file that this synthesis script sources
-- **[VLSI Floorplanning]({% post_url 2026-05-17-vlsi-floorplanning %})** — take the gate netlist into physical design
-- **[Setup & Hold Time — STA]({% post_url 2026-05-17-setup-hold-time-sta %})** — understand the timing reports DC generates
+- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — write the `.sdc` file that this synthesis script sources
+- **[VLSI Floorplanning]({{ site.baseurl }}{% post_url 2026-05-17-vlsi-floorplanning %})** — take the gate netlist into physical design
+- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand the timing reports DC generates

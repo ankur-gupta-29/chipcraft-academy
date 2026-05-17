@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "SDC Timing Constraints — Complete Practical Guide for ASIC Design"
 description: "Master Synopsys Design Constraints (SDC): create_clock, set_input_delay, set_output_delay, set_multicycle_path, set_false_path, clock groups — with a complete annotated constraint file for a dual-clock processor."
@@ -383,6 +383,6 @@ set_load 0.05 [all_outputs]
 
 ## What's Next
 
-- **[Setup & Hold Time — STA]({% post_url 2026-05-17-setup-hold-time-sta %})** — understand what the STA tool is actually computing
-- **[Clock Domain Crossing]({% post_url 2026-05-17-clock-domain-crossing %})** — implement the `set_clock_groups` and `set_false_path` CDC patterns in RTL
-- **[RTL Synthesis with Design Compiler]({% post_url 2026-05-17-synopsys-design-compiler %})** — feed this SDC file into synthesis and interpret the report
+- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand what the STA tool is actually computing
+- **[Clock Domain Crossing]({{ site.baseurl }}{% post_url 2026-05-17-clock-domain-crossing %})** — implement the `set_clock_groups` and `set_false_path` CDC patterns in RTL
+- **[RTL Synthesis with Design Compiler]({{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %})** — feed this SDC file into synthesis and interpret the report

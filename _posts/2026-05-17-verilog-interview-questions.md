@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Top 50 Verilog & SystemVerilog Interview Questions (with Answers)"
 description: "The 50 most common Verilog and SystemVerilog interview questions asked at ASIC, VLSI, and RTL design interviews — with clear, concise answers covering synthesis, simulation, and verification."
@@ -491,6 +491,6 @@ These show engagement and technical depth:
 
 ## What's Next
 
-- **[FSM Design in Verilog]({% post_url 2026-05-17-fsm-design-verilog %})** — master the FSM interview questions with real code
-- **[SystemVerilog vs Verilog]({% post_url 2026-05-17-systemverilog-vs-verilog %})** — answer the SV-specific questions confidently
-- **[Setup & Hold Time — STA]({% post_url 2026-05-17-setup-hold-time-sta %})** — deep dive into timing interview questions
+- **[FSM Design in Verilog]({{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %})** — master the FSM interview questions with real code
+- **[SystemVerilog vs Verilog]({{ site.baseurl }}{% post_url 2026-05-17-systemverilog-vs-verilog %})** — answer the SV-specific questions confidently
+- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — deep dive into timing interview questions

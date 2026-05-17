@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "FSM Design in Verilog — Moore & Mealy with Full Examples"
 description: "Learn finite state machine design in Verilog: Moore vs Mealy machines, 2-process and 3-process coding styles, safe-state design, gray and one-hot encoding — with complete synthesisable examples."
@@ -309,6 +309,6 @@ Avoid Verilog pragmas `// synthesis full_case parallel_case` unless you fully un
 
 ## What's Next
 
-- **[SystemVerilog vs Verilog]({% post_url 2026-05-17-systemverilog-vs-verilog %})** — upgrade FSM coding style with `typedef enum`, `always_comb`, and `always_ff`
-- **[Pipelining RTL Design]({% post_url 2026-05-17-pipeline-rtl-design %})** — apply state-machine thinking to multi-stage pipelines
-- **[Setup & Hold Time]({% post_url 2026-05-17-setup-hold-time-sta %})** — understand why FSM state registers have timing constraints
+- **[SystemVerilog vs Verilog]({{ site.baseurl }}{% post_url 2026-05-17-systemverilog-vs-verilog %})** — upgrade FSM coding style with `typedef enum`, `always_comb`, and `always_ff`
+- **[Pipelining RTL Design]({{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %})** — apply state-machine thinking to multi-stage pipelines
+- **[Setup & Hold Time]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand why FSM state registers have timing constraints

@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Functional Coverage in SystemVerilog — Complete Guide with Examples"
 description: "Master SystemVerilog functional coverage: covergroups, coverpoints, bins, cross coverage, transition coverage, and integrating coverage into UVM — with verified ALU examples and coverage closure tips."
@@ -458,6 +458,6 @@ Before tape-out, verify:
 
 ## What's Next
 
-- **[SystemVerilog Assertions (SVA)]({% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add `cover property` directives alongside your covergroups
-- **[UVM Testbench from Scratch]({% post_url 2026-05-13-uvm-testbench-from-scratch %})** — build the environment this coverage collector plugs into
-- **[cocotb Python Verification]({% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — lightweight Python alternative with `hypothesis` for property-based testing
+- **[SystemVerilog Assertions (SVA)]({{ site.baseurl }}{% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add `cover property` directives alongside your covergroups
+- **[UVM Testbench from Scratch]({{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %})** — build the environment this coverage collector plugs into
+- **[cocotb Python Verification]({{ site.baseurl }}{% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — lightweight Python alternative with `hypothesis` for property-based testing

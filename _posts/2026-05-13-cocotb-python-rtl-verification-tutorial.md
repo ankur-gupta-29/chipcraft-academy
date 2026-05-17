@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "cocotb Tutorial — Verify RTL with Python (Beginner Guide)"
 description: "Learn to write hardware testbenches in Python using cocotb. Covers installation, clock, triggers, driving signals, assertions, and running in CI — with a complete verified ALU example."
@@ -384,5 +384,5 @@ x2 = int(dut.RF.regs[2].value)
 ## What's Next
 
 Once you're comfortable with cocotb:
-- **[SystemVerilog Assertions (SVA)]({% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add property checks inside the DUT itself
-- **[UVM Testbench from Scratch]({% post_url 2026-05-13-uvm-testbench-from-scratch %})** — industry-standard verification methodology for large SoCs
+- **[SystemVerilog Assertions (SVA)]({{ site.baseurl }}{% post_url 2026-05-13-systemverilog-assertions-sva-guide %})** — add property checks inside the DUT itself
+- **[UVM Testbench from Scratch]({{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %})** — industry-standard verification methodology for large SoCs

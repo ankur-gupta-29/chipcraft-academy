@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Cadence Virtuoso & Innovus Keyboard Shortcuts — Complete Cheat Sheet"
 description: "Every keyboard shortcut you need for Cadence Virtuoso (schematic/layout) and Innovus (place & route), verified against Cadence community sources, with a full keyboard SVG diagram."
@@ -296,4 +296,4 @@ Press `G`, type a net name (e.g. `VDD`, `clk`), and the view flies straight to i
 
 Save the keyboard diagram at the top of this page and print at A4/Letter size — colour laser preferred so the key-colour coding is clear.
 
-*Need a deeper dive into the full ASIC flow? Read the [LibreLane open-source RTL-to-GDSII tutorial →]({% post_url 2026-05-12-librelane-tutorial-beginners %})*
+*Need a deeper dive into the full ASIC flow? Read the [LibreLane open-source RTL-to-GDSII tutorial →]({{ site.baseurl }}{% post_url 2026-05-12-librelane-tutorial-beginners %})*

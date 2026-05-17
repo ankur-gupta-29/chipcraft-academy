@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Pipelining in RTL Design — Build & Verify a 4-Stage Pipeline in Verilog"
 description: "Master RTL pipelining: why pipeline, data hazards, stall logic, forwarding, a complete 4-stage ALU pipeline in Verilog, and a cocotb testbench to verify it — with timing diagrams."
@@ -364,6 +364,6 @@ async def test_pipeline_throughput(dut):
 
 ## What's Next
 
-- **[SystemVerilog vs Verilog]({% post_url 2026-05-17-systemverilog-vs-verilog %})** — use `always_ff` and `always_comb` for cleaner pipeline stage coding
-- **[Setup & Hold Time — STA]({% post_url 2026-05-17-setup-hold-time-sta %})** — understand why each pipeline stage must meet timing
-- **[FSM Design in Verilog]({% post_url 2026-05-17-fsm-design-verilog %})** — combine FSM state machines with pipelines for control logic
+- **[SystemVerilog vs Verilog]({{ site.baseurl }}{% post_url 2026-05-17-systemverilog-vs-verilog %})** — use `always_ff` and `always_comb` for cleaner pipeline stage coding
+- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand why each pipeline stage must meet timing
+- **[FSM Design in Verilog]({{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %})** — combine FSM state machines with pipelines for control logic

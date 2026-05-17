@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "SystemVerilog Assertions (SVA) — Complete Beginner Guide"
 description: "Master SystemVerilog Assertions (SVA): immediate vs concurrent assertions, sequences, properties, temporal operators ##n, |-> |=>, $rose/$fell/$past, repetition, and coverage directives — with verified examples."
@@ -402,6 +402,6 @@ prove -property {a_req_ack p_awvalid_stable_chk}
 
 ## What's Next
 
-- **[UVM Testbench from Scratch]({% post_url 2026-05-13-uvm-testbench-from-scratch %})** — build a full UVM environment with driver, monitor, and scoreboard
-- **[Functional Coverage in SystemVerilog]({% post_url 2026-05-13-functional-coverage-systemverilog %})** — covergroups and coverpoints to measure what your tests exercise
-- **[cocotb Python Verification]({% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — write testbenches in Python instead of SystemVerilog
+- **[UVM Testbench from Scratch]({{ site.baseurl }}{% post_url 2026-05-13-uvm-testbench-from-scratch %})** — build a full UVM environment with driver, monitor, and scoreboard
+- **[Functional Coverage in SystemVerilog]({{ site.baseurl }}{% post_url 2026-05-13-functional-coverage-systemverilog %})** — covergroups and coverpoints to measure what your tests exercise
+- **[cocotb Python Verification]({{ site.baseurl }}{% post_url 2026-05-13-cocotb-python-rtl-verification-tutorial %})** — write testbenches in Python instead of SystemVerilog

@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Power Analysis in ASIC Design — Dynamic, Static & Low-Power Techniques"
 description: "Understand ASIC power: dynamic power (α·C·V²·f), static leakage, clock gating, multi-Vt, power domains, UPF basics, and IR drop — with practical Verilog and tool command examples."
@@ -304,6 +304,6 @@ Before tape-out:
 
 ## What's Next
 
-- **[VLSI Floorplanning]({% post_url 2026-05-17-vlsi-floorplanning %})** — design the power grid that delivers current to all cells
-- **[RTL Synthesis with Design Compiler]({% post_url 2026-05-17-synopsys-design-compiler %})** — enable `compile_ultra -gate_clock` for automatic clock gating insertion
-- **[SDC Timing Constraints]({% post_url 2026-05-17-sdc-timing-constraints %})** — timing constraints also constrain power via `set_max_dynamic_power`
+- **[VLSI Floorplanning]({{ site.baseurl }}{% post_url 2026-05-17-vlsi-floorplanning %})** — design the power grid that delivers current to all cells
+- **[RTL Synthesis with Design Compiler]({{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %})** — enable `compile_ultra -gate_clock` for automatic clock gating insertion
+- **[SDC Timing Constraints]({{ site.baseurl }}{% post_url 2026-05-17-sdc-timing-constraints %})** — timing constraints also constrain power via `set_max_dynamic_power`

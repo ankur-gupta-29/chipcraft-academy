@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "SystemVerilog vs Verilog — What's New and Why It Matters for RTL"
 description: "A complete comparison of SystemVerilog vs Verilog for RTL design: the logic type, always_comb/always_ff, interfaces, packages, typedef enum, structs — and what's synthesis-safe vs simulation-only."
@@ -365,6 +365,6 @@ endmodule
 
 ## What's Next
 
-- **[FSM Design in Verilog]({% post_url 2026-05-17-fsm-design-verilog %})** — apply `typedef enum` and `always_comb` to real state machines
-- **[Pipelining RTL Design]({% post_url 2026-05-17-pipeline-rtl-design %})** — use SV features to build a clean 4-stage pipeline
-- **[Setup & Hold Time — STA]({% post_url 2026-05-17-setup-hold-time-sta %})** — understand why timing constraints apply to your SV registers
+- **[FSM Design in Verilog]({{ site.baseurl }}{% post_url 2026-05-17-fsm-design-verilog %})** — apply `typedef enum` and `always_comb` to real state machines
+- **[Pipelining RTL Design]({{ site.baseurl }}{% post_url 2026-05-17-pipeline-rtl-design %})** — use SV features to build a clean 4-stage pipeline
+- **[Setup & Hold Time — STA]({{ site.baseurl }}{% post_url 2026-05-17-setup-hold-time-sta %})** — understand why timing constraints apply to your SV registers

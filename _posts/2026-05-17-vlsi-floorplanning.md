@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "VLSI Floorplanning — Concepts, Techniques & Trade-offs"
 description: "Learn VLSI floorplanning: die size, core utilisation, macro placement, power stripes, pin assignment, and floorplan quality metrics — with practical guidance for Innovus and ICC2."
@@ -223,6 +223,6 @@ GDSII Export (Calibre DRC/LVS)
 
 ## What's Next
 
-- **[RTL Synthesis with Design Compiler]({% post_url 2026-05-17-synopsys-design-compiler %})** — the step before floorplanning
-- **[Power Analysis in ASIC Design]({% post_url 2026-05-17-power-analysis-asic %})** — quantify the power budget your grid must supply
-- **[Cadence Virtuoso & Innovus Shortcuts]({% post_url 2026-05-13-cadence-virtuoso-innovus-shortcuts %})** — keyboard shortcuts for faster floorplan editing in Innovus
+- **[RTL Synthesis with Design Compiler]({{ site.baseurl }}{% post_url 2026-05-17-synopsys-design-compiler %})** — the step before floorplanning
+- **[Power Analysis in ASIC Design]({{ site.baseurl }}{% post_url 2026-05-17-power-analysis-asic %})** — quantify the power budget your grid must supply
+- **[Cadence Virtuoso & Innovus Shortcuts]({{ site.baseurl }}{% post_url 2026-05-13-cadence-virtuoso-innovus-shortcuts %})** — keyboard shortcuts for faster floorplan editing in Innovus
