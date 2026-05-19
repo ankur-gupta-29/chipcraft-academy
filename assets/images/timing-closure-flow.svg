@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" width="700" height="420" style="background:#0d1117;font-family:ui-monospace,monospace;">
+  <rect width="700" height="420" fill="#0d1117"/>
+  <text x="350" y="26" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">Timing Closure Flow — Fixing Setup &amp; Hold Violations</text>
+
+  <defs>
+    <marker id="tc-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#c9d1d9"/>
+    </marker>
+    <marker id="tc-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#ff7b72"/>
+    </marker>
+    <marker id="tc-grn" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <!-- Start -->
+  <rect x="275" y="44" width="150" height="32" rx="16" fill="#1e2936" stroke="#58a6ff" stroke-width="2"/>
+  <text x="350" y="65" fill="#58a6ff" font-size="11" font-weight="bold" text-anchor="middle">Run STA (PrimeTime)</text>
+  <line x1="350" y1="76" x2="350" y2="96" stroke="#c9d1d9" stroke-width="1.5" marker-end="url(#tc-arr)"/>
+
+  <!-- Check violations -->
+  <rect x="255" y="96" width="190" height="32" rx="6" fill="#2a1a1a" stroke="#ffa657" stroke-width="2"/>
+  <text x="350" y="117" fill="#ffa657" font-size="11" font-weight="bold" text-anchor="middle">Any violations?</text>
+
+  <!-- YES branch → Setup or Hold -->
+  <line x1="350" y1="128" x2="350" y2="150" stroke="#ff7b72" stroke-width="1.5" marker-end="url(#tc-red)"/>
+  <text x="360" y="143" fill="#ff7b72" font-size="9">YES</text>
+
+  <!-- NO branch → Done -->
+  <line x1="445" y1="112" x2="560" y2="112" stroke="#3fb950" stroke-width="1.5" marker-end="url(#tc-grn)"/>
+  <text x="495" y="106" fill="#3fb950" font-size="9">NO</text>
+  <rect x="560" y="96" width="110" height="32" rx="16" fill="#1a2e1a" stroke="#3fb950" stroke-width="2"/>
+  <text x="615" y="117" fill="#3fb950" font-size="11" font-weight="bold" text-anchor="middle">✓ Timing Met</text>
+
+  <!-- Setup or Hold decision -->
+  <rect x="245" y="150" width="210" height="32" rx="6" fill="#1e2936" stroke="#9e6bdb" stroke-width="1.5"/>
+  <text x="350" y="171" fill="#9e6bdb" font-size="11" text-anchor="middle">Setup or Hold violation?</text>
+  <line x1="350" y1="182" x2="350" y2="200" stroke="#c9d1d9" stroke-width="1.5" marker-end="url(#tc-arr)"/>
+
+  <!-- Setup fixes (left column) -->
+  <line x1="245" y1="166" x2="160" y2="166" stroke="#ff7b72" stroke-width="1.5"/>
+  <line x1="160" y1="166" x2="160" y2="206" stroke="#ff7b72" stroke-width="1.5" marker-end="url(#tc-red)"/>
+  <text x="195" y="160" fill="#ff7b72" font-size="9">SETUP</text>
+
+  <rect x="30" y="206" width="260" height="130" rx="6" fill="#2a1a1a" stroke="#ff7b72" stroke-width="1.5"/>
+  <text x="160" y="226" fill="#ff7b72" font-size="11" font-weight="bold" text-anchor="middle">Setup Violation Fixes</text>
+  <text x="45" y="246" fill="#e6edf3" font-size="9">① Upsize cell → higher drive strength</text>
+  <text x="45" y="262" fill="#e6edf3" font-size="9">② Swap HVT → LVT (faster, more leakage)</text>
+  <text x="45" y="278" fill="#e6edf3" font-size="9">③ Restructure logic — reduce cone depth</text>
+  <text x="45" y="294" fill="#e6edf3" font-size="9">④ Insert pipeline register (new timing path)</text>
+  <text x="45" y="310" fill="#e6edf3" font-size="9">⑤ Move cells closer (shorter wire delay)</text>
+  <text x="45" y="326" fill="#8b949e" font-size="8">PrimeTime ECO: size_cell, swap_cell</text>
+
+  <!-- Hold fixes (right column) -->
+  <line x1="455" y1="166" x2="540" y2="166" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="540" y1="166" x2="540" y2="206" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#tc-arr)"/>
+  <text x="488" y="160" fill="#58a6ff" font-size="9">HOLD</text>
+
+  <rect x="410" y="206" width="260" height="130" rx="6" fill="#1a1e2e" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="540" y="226" fill="#58a6ff" font-size="11" font-weight="bold" text-anchor="middle">Hold Violation Fixes</text>
+  <text x="425" y="246" fill="#e6edf3" font-size="9">① Insert delay buffer on short path</text>
+  <text x="425" y="262" fill="#e6edf3" font-size="9">② Downsize cell → slower, longer delay</text>
+  <text x="425" y="278" fill="#e6edf3" font-size="9">③ Useful skew — delay capture FF clock</text>
+  <text x="425" y="294" fill="#e6edf3" font-size="9">④ Add logic (inverter pairs) to long path</text>
+  <text x="425" y="310" fill="#e6edf3" font-size="9">⑤ set_min_delay to tighten hold check</text>
+  <text x="425" y="326" fill="#8b949e" font-size="8">PrimeTime ECO: insert_buffer, size_cell</text>
+
+  <!-- Arrows from fix boxes back to run STA (loop) -->
+  <line x1="160" y1="336" x2="160" y2="380" stroke="#c9d1d9" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="160" y1="380" x2="350" y2="380" stroke="#c9d1d9" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="540" y1="336" x2="540" y2="380" stroke="#c9d1d9" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="540" y1="380" x2="350" y2="380" stroke="#c9d1d9" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="350" y1="380" x2="350" y2="400" stroke="#c9d1d9" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#tc-arr)"/>
+  <text x="350" y="396" fill="#8b949e" font-size="8" text-anchor="middle">Re-run STA after each fix</text>
+</svg>

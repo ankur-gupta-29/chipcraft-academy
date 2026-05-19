@@ -140,6 +140,13 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">6</div>
     <div class="lp-step-body">
+      <h4><a href="{{ '/blog/2026/05/19/fifo-design-verilog/' | relative_url }}">FIFO Design in Verilog — Synchronous & Asynchronous</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <p>Build a parameterisable sync FIFO with full/empty flags, pointer width rule, and async FIFO Gray-code rules.</p>
+    </div>
+  </li>
+  <li class="lp-step">
+    <div class="lp-step-num">7</div>
+    <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/17/verilog-interview-questions/' | relative_url }}">50 Verilog & Digital Design Interview Questions</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Test your knowledge and prepare for RTL design interviews.</p>
     </div>
@@ -206,12 +213,26 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">7</div>
     <div class="lp-step-body">
+      <h4><a href="{{ '/blog/2026/05/19/timing-closure-techniques/' | relative_url }}">Timing Closure Techniques — Fixing Setup & Hold Violations</a> <span class="lp-badge advanced">Advanced</span></h4>
+      <p>Cell upsizing, LVT swap, buffer insertion, useful skew, and the ECO flow with PrimeTime and Innovus.</p>
+    </div>
+  </li>
+  <li class="lp-step">
+    <div class="lp-step-num">8</div>
+    <div class="lp-step-body">
+      <h4><a href="{{ '/blog/2026/05/19/dft-scan-chain-basics/' | relative_url }}">Design for Test (DFT) & Scan Chains — ASIC Testability Guide</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <p>Scan FF internals, chain insertion with Design Compiler, ATPG fault coverage, JTAG, and test compression.</p>
+    </div>
+  </li>
+  <li class="lp-step">
+    <div class="lp-step-num">9</div>
+    <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/12/librelane-tutorial-beginners/' | relative_url }}">LibreLane ASIC Flow Tutorial</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Run a free, open-source ASIC flow end-to-end — no expensive EDA tools required.</p>
     </div>
   </li>
   <li class="lp-step">
-    <div class="lp-step-num">8</div>
+    <div class="lp-step-num">10</div>
     <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/13/cadence-virtuoso-innovus-shortcuts/' | relative_url }}">Cadence Innovus Keyboard Shortcuts</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Work faster in Innovus PnR — essential shortcuts every physical design engineer needs.</p>
