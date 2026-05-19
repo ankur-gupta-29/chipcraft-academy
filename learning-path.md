@@ -133,6 +133,13 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">5</div>
     <div class="lp-step-body">
+      <h4><a href="{{ '/blog/2026/05/19/axi4-protocol-systemverilog/' | relative_url }}">AXI4 & AXI4-Lite Protocol in SystemVerilog</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <p>The industry-standard on-chip bus: 5 channels, VALID/READY handshake, full slave RTL implementation.</p>
+    </div>
+  </li>
+  <li class="lp-step">
+    <div class="lp-step-num">6</div>
+    <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/17/verilog-interview-questions/' | relative_url }}">50 Verilog & Digital Design Interview Questions</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Test your knowledge and prepare for RTL design interviews.</p>
     </div>
@@ -192,12 +199,19 @@ permalink: /learning-path/
   <li class="lp-step">
     <div class="lp-step-num">6</div>
     <div class="lp-step-body">
+      <h4><a href="{{ '/blog/2026/05/19/clock-tree-synthesis-cts/' | relative_url }}">Clock Tree Synthesis (CTS) — H-Tree, Skew & Innovus Commands</a> <span class="lp-badge intermediate">Intermediate</span></h4>
+      <p>How the clock reaches every flip-flop: buffer insertion, skew targets, NDR routing rules.</p>
+    </div>
+  </li>
+  <li class="lp-step">
+    <div class="lp-step-num">7</div>
+    <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/12/librelane-tutorial-beginners/' | relative_url }}">LibreLane ASIC Flow Tutorial</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Run a free, open-source ASIC flow end-to-end — no expensive EDA tools required.</p>
     </div>
   </li>
   <li class="lp-step">
-    <div class="lp-step-num">7</div>
+    <div class="lp-step-num">8</div>
     <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/13/cadence-virtuoso-innovus-shortcuts/' | relative_url }}">Cadence Innovus Keyboard Shortcuts</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Work faster in Innovus PnR — essential shortcuts every physical design engineer needs.</p>
@@ -250,6 +264,13 @@ permalink: /learning-path/
   </li>
   <li class="lp-step">
     <div class="lp-step-num">5</div>
+    <div class="lp-step-body">
+      <h4><a href="{{ '/blog/2026/05/19/verilog-testbench-from-scratch/' | relative_url }}">Writing Verilog Testbenches from Scratch</a> <span class="lp-badge beginner">Beginner</span></h4>
+      <p>Clock gen, reset, stimulus, self-checking checker, VCD waveforms — build your first testbench step by step.</p>
+    </div>
+  </li>
+  <li class="lp-step">
+    <div class="lp-step-num">6</div>
     <div class="lp-step-body">
       <h4><a href="{{ '/blog/2026/05/13/cocotb-python-rtl-verification-tutorial/' | relative_url }}">cocotb — Python-Based RTL Verification</a> <span class="lp-badge intermediate">Intermediate</span></h4>
       <p>Write testbenches in Python using cocotb — great for data-science engineers entering IC design.</p>

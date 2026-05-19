@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" width="700" height="360" style="background:#0d1117;font-family:ui-monospace,monospace;">
+  <rect width="700" height="360" fill="#0d1117"/>
+  <text x="350" y="26" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">Verilog Testbench Anatomy</text>
+
+  <!-- Outer testbench boundary -->
+  <rect x="20" y="40" width="660" height="300" rx="8" fill="none" stroke="#444" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="42" y="58" fill="#8b949e" font-size="10">module tb_top  (no ports)</text>
+
+  <!-- Clock Generator -->
+  <rect x="40" y="70" width="140" height="60" rx="6" fill="#1a1e2e" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="110" y="94" fill="#58a6ff" font-size="11" font-weight="bold" text-anchor="middle">Clock Generator</text>
+  <text x="110" y="110" fill="#8b949e" font-size="9" text-anchor="middle">always #5 clk=~clk</text>
+  <text x="110" y="122" fill="#8b949e" font-size="9" text-anchor="middle">initial clk=0</text>
+
+  <!-- Reset Generator -->
+  <rect x="40" y="150" width="140" height="60" rx="6" fill="#1a1e2e" stroke="#9e6bdb" stroke-width="1.5"/>
+  <text x="110" y="174" fill="#9e6bdb" font-size="11" font-weight="bold" text-anchor="middle">Reset Generator</text>
+  <text x="110" y="190" fill="#8b949e" font-size="9" text-anchor="middle">rst_n=0 → wait →</text>
+  <text x="110" y="202" fill="#8b949e" font-size="9" text-anchor="middle">rst_n=1</text>
+
+  <!-- Stimulus / Driver -->
+  <rect x="40" y="230" width="140" height="80" rx="6" fill="#1a1e2e" stroke="#ffa657" stroke-width="1.5"/>
+  <text x="110" y="254" fill="#ffa657" font-size="11" font-weight="bold" text-anchor="middle">Stimulus Driver</text>
+  <text x="110" y="270" fill="#8b949e" font-size="9" text-anchor="middle">Apply inputs</text>
+  <text x="110" y="282" fill="#8b949e" font-size="9" text-anchor="middle">@(posedge clk)</text>
+  <text x="110" y="294" fill="#8b949e" font-size="9" text-anchor="middle">data_in &lt;= ...</text>
+
+  <!-- DUT box (center) -->
+  <rect x="240" y="100" width="200" height="180" rx="8" fill="#1a2936" stroke="#3fb950" stroke-width="2.5"/>
+  <text x="340" y="130" fill="#3fb950" font-size="13" font-weight="bold" text-anchor="middle">DUT</text>
+  <text x="340" y="148" fill="#3fb950" font-size="10" text-anchor="middle">(Design Under Test)</text>
+  <text x="340" y="172" fill="#8b949e" font-size="9" text-anchor="middle">u_dut (</text>
+  <text x="340" y="185" fill="#8b949e" font-size="9" text-anchor="middle">  .clk   (clk),</text>
+  <text x="340" y="198" fill="#8b949e" font-size="9" text-anchor="middle">  .rst_n (rst_n),</text>
+  <text x="340" y="211" fill="#8b949e" font-size="9" text-anchor="middle">  .data_in(data_in),</text>
+  <text x="340" y="224" fill="#8b949e" font-size="9" text-anchor="middle">  .data_out(data_out)</text>
+  <text x="340" y="237" fill="#8b949e" font-size="9" text-anchor="middle">);</text>
+  <text x="340" y="262" fill="#3fb950" font-size="9" text-anchor="middle">Your RTL module</text>
+
+  <!-- Monitor / Checker -->
+  <rect x="500" y="100" width="165" height="80" rx="6" fill="#1a1e2e" stroke="#ff7b72" stroke-width="1.5"/>
+  <text x="582" y="124" fill="#ff7b72" font-size="11" font-weight="bold" text-anchor="middle">Checker / Monitor</text>
+  <text x="582" y="140" fill="#8b949e" font-size="9" text-anchor="middle">Compare actual vs</text>
+  <text x="582" y="152" fill="#8b949e" font-size="9" text-anchor="middle">expected output</text>
+  <text x="582" y="164" fill="#8b949e" font-size="9" text-anchor="middle">$error / pass_count</text>
+
+  <!-- Waveform Dump -->
+  <rect x="500" y="210" width="165" height="60" rx="6" fill="#1a1e2e" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="582" y="234" fill="#58a6ff" font-size="11" font-weight="bold" text-anchor="middle">Waveform Dump</text>
+  <text x="582" y="250" fill="#8b949e" font-size="9" text-anchor="middle">$dumpfile("wave.vcd")</text>
+  <text x="582" y="262" fill="#8b949e" font-size="9" text-anchor="middle">$dumpvars(0, tb)</text>
+
+  <!-- Arrows from drivers to DUT -->
+  <defs>
+    <marker id="ta" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0,7 3,0 6" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <!-- clk -->
+  <line x1="180" y1="100" x2="238" y2="135" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ta)"/>
+  <text x="206" y="112" fill="#58a6ff" font-size="8">clk</text>
+  <!-- rst -->
+  <line x1="180" y1="180" x2="238" y2="170" stroke="#9e6bdb" stroke-width="1.5" marker-end="url(#ta)"/>
+  <text x="192" y="170" fill="#9e6bdb" font-size="8">rst_n</text>
+  <!-- data_in -->
+  <line x1="180" y1="260" x2="238" y2="230" stroke="#ffa657" stroke-width="1.5" marker-end="url(#ta)"/>
+  <text x="190" y="252" fill="#ffa657" font-size="8">data_in</text>
+
+  <!-- Arrow from DUT to Checker -->
+  <line x1="440" y1="155" x2="498" y2="155" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ta)"/>
+  <text x="465" y="148" fill="#8b949e" font-size="8">data_out</text>
+
+  <!-- $finish note -->
+  <rect x="200" y="300" width="300" height="28" rx="4" fill="#1a2936" stroke="#444"/>
+  <text x="350" y="319" fill="#8b949e" font-size="9" text-anchor="middle">initial begin ... #1000; $display("PASS/FAIL"); $finish; end</text>
+</svg>
