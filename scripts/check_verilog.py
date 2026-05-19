@@ -84,7 +84,7 @@ def main() -> int:
 
     for post in posts:
         path = os.path.join(POSTS_DIR, post)
-        with open(path, encoding="utf-8") as f:
+        with open(path, encoding="utf-8-sig") as f:   # utf-8-sig strips BOM if present
             content = f.read()
 
         blocks = VERILOG_BLOCK.findall(content)

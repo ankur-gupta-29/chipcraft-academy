@@ -242,50 +242,64 @@ module tb_sync_fifo;
     reg  [DATA_W-1:0]  wr_data;
     wire [DATA_W-1:0]  rd_data;
     wire               full, empty, almost_full, almost_empty;
+    wire [4:0]         fill_level;   // log2(16)+1 = 5 bits for DEPTH=16
 
-    sync_fifo #(.DATA_W(DATA_W), .DEPTH(DEPTH)) u_dut (.*);
+    sync_fifo #(.DATA_W(DATA_W), .DEPTH(DEPTH)) u_dut (
+        .clk(clk), .rst_n(rst_n),
+        .wr_en(wr_en), .wr_data(wr_data), .full(full), .almost_full(almost_full),
+        .rd_en(rd_en), .rd_data(rd_data), .empty(empty), .almost_empty(almost_empty),
+        .fill_level(fill_level)
+    );
 
     initial clk = 0;
     always #5 clk = ~clk;
 
-    // Reference model queue
-    reg [DATA_W-1:0] ref_q[$];
+    // Reference model — simple array + head/tail indices
+    reg [DATA_W-1:0] ref_mem [0:DEPTH-1];
+    integer ref_wr = 0, ref_rd = 0;
     integer errors = 0;
+    integer i;
 
     initial begin
         rst_n = 0; wr_en = 0; rd_en = 0; wr_data = 0;
         repeat(2) @(posedge clk); #1; rst_n = 1;
 
-        // Test 1: Fill FIFO completely
-        repeat(DEPTH) begin
+        // Test 1: Fill FIFO completely with a deterministic pattern
+        for (i = 0; i < DEPTH; i = i + 1) begin
             @(posedge clk); #1;
             if (!full) begin
-                wr_data = $urandom_range(0, 255);
+                wr_data = (i * 13 + 7) & 8'hFF;   // deterministic pattern
                 wr_en = 1;
-                ref_q.push_back(wr_data);
+                ref_mem[ref_wr] = wr_data;
+                ref_wr = ref_wr + 1;
             end
         end
         @(posedge clk); #1; wr_en = 0;
 
         if (!full) begin
-            $error("Expected full after %0d writes", DEPTH);
-            errors++;
+            $display("ERROR: Expected full after %0d writes", DEPTH);
+            errors = errors + 1;
         end
 
-        // Test 2: Drain FIFO and verify data
-        repeat(DEPTH) begin
+        // Test 2: Drain FIFO and verify data order
+        for (i = 0; i < DEPTH; i = i + 1) begin
             @(posedge clk); #1;
             if (!empty) begin
                 rd_en = 1;
                 @(posedge clk); #1; rd_en = 0;
-                if (rd_data !== ref_q.pop_front()) begin
-                    $error("Data mismatch: got %0h", rd_data);
-                    errors++;
+                if (rd_data !== ref_mem[ref_rd]) begin
+                    $display("ERROR: entry %0d — got 0x%0h, expected 0x%0h",
+                             i, rd_data, ref_mem[ref_rd]);
+                    errors = errors + 1;
                 end
+                ref_rd = ref_rd + 1;
             end
         end
 
-        if (!empty) begin $error("Expected empty"); errors++; end
+        if (!empty) begin
+            $display("ERROR: Expected empty after draining");
+            errors = errors + 1;
+        end
 
         $display("Errors: %0d", errors);
         if (errors == 0) $display("*** ALL FIFO TESTS PASSED ***");

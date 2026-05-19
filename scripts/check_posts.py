@@ -30,7 +30,7 @@ def parse_front_matter(content: str) -> dict:
 def check_post(filename: str, path: str) -> list:
     errors = []
 
-    with open(path, encoding="utf-8") as f:
+    with open(path, encoding="utf-8-sig") as f:   # utf-8-sig strips BOM if present
         content = f.read()
 
     if not content.startswith("---"):
